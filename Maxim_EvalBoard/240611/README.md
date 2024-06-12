@@ -19,4 +19,4 @@ the PocketSDR tools found at https://github.com/tomojitakasu/PocketSDR
 
 Simultaneous observation of the GNSS constellation:
 
-<img src="Screenshot_20240611-172339.png">
+<img src="Screenshot_20240611-172339.png" width=300>

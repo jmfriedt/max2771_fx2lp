@@ -15,4 +15,4 @@ processing using ``pocket_acq.py`` from https://github.com/tomojitakasu/PocketSD
 
 GNSS constellation observed at the same time:
 
-<img src="Screenshot_20240612-070601.png">
+<img src="Screenshot_20240612-070601.png" width=300>
