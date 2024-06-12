@@ -1,6 +1,7 @@
 From Tomoji Takasu's Pocket SDR design, v2.3 found at https://github.com/tomojitakasu/PocketSDR:
 
 Schematic:
+
 <img src="max2771_fx2lp.svg">
 
 Board layers:
