@@ -16,3 +16,12 @@ processing using ``pocket_acq.py`` from https://github.com/tomojitakasu/PocketSD
 GNSS constellation observed at the same time:
 
 <img src="Screenshot_20240612-070601.png" width=300>
+
+Sample datasets:
+* 1574p92_m90dBm_4MSps_IF0MHz.bin: continuous wave tone at 1574.92 MHz, LO frequency
+at 1575.42 MHz, 8-bit IQ interleaved, 4 MHz sampling frequency
+* 1575p92_m90dBm_12MSps_IF3MHz.bin: continuous wave tone at 1574.92 MHz, LO frequency
+at 1572.42 MHz and 3 MHz IF, 8-bit I only, 12 MHz sampling frequency
+* GPS_4MSps_IF0MHz.bin: GPS L1 antenna, LO frequency at 1575.42 MHz, 8-bit IQ interleaved, 4 MHz sampling frequency
+* GPS_12MSps_IF3MHz.bin: GPS L1 antenna, LO frequency at 1575.42 MHz, 8-bit I only, 12 MHz sampling frequency 
+* go.m: processing script
