@@ -1,4 +1,5 @@
-From Tomoji Takasu's Pocket SDR design, v2.3 found at https://github.com/tomojitakasu/PocketSDR:
+From Tomoji Takasu's Pocket SDR design, v2.3 found at https://github.com/tomojitakasu/PocketSDR, 
+to be fitted on https://fr.aliexpress.com/item/1005006134347046.html FX2LP development board:
 
 <img src="max2771_fx2lp.png">
 

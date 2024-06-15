@@ -107,7 +107,7 @@
 		(aux_axis_origin 121.0011 116.75)
 		(grid_origin 121.0011 116.75)
 		(pcbplotparams
-			(layerselection 0x00010fc_ffffffff)
+			(layerselection 0x0001000_ffffffff)
 			(plot_on_all_layers_selection 0x0000000_00000000)
 			(disableapertmacros no)
 			(usegerberextensions no)
@@ -14555,7 +14555,7 @@
 		(descr "Through hole straight socket strip, 2x10, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 2x10 2.54mm double row")
 		(property "Reference" "P2"
-			(at -1 -25.46 360)
+			(at -1 -25.46 0)
 			(layer "B.SilkS")
 			(uuid "68edfd60-d594-4613-a28f-fa560908d44d")
 			(effects
@@ -14567,7 +14567,7 @@
 			)
 		)
 		(property "Value" "Conn_02x10_Odd_Even"
-			(at 2.3 -15.76 360)
+			(at 2.3 -15.76 0)
 			(layer "B.Fab")
 			(uuid "93f5e15c-fe7e-4815-a9a6-c07ad37bbea7")
 			(effects
@@ -14796,7 +14796,7 @@
 			(uuid "75e7e21e-bc37-4935-83c4-d85c80942f19")
 		)
 		(fp_text user "${REFERENCE}"
-			(at -1.27 -11.43 360)
+			(at -1.27 -11.43 0)
 			(layer "B.Fab")
 			(uuid "b6ca7d28-e8a0-42c3-842b-3eb9960b279d")
 			(effects
@@ -15046,7 +15046,7 @@
 		(descr "Through hole straight socket strip, 2x10, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 2x10 2.54mm double row")
 		(property "Reference" "P1"
-			(at -1.2 -25.48 360)
+			(at -1.2 -25.48 0)
 			(layer "B.SilkS")
 			(uuid "6cbb39d4-6517-4b17-b03e-a09b39941647")
 			(effects
@@ -15058,7 +15058,7 @@
 			)
 		)
 		(property "Value" "Conn_02x10_Odd_Even"
-			(at -4.8 -15.68 360)
+			(at -4.8 -15.68 0)
 			(layer "B.Fab")
 			(uuid "0db01ee2-5a3b-41e4-a4aa-bc0cea941d89")
 			(effects
@@ -15287,7 +15287,7 @@
 			(uuid "e6cf4aa7-0e1c-46df-98b3-92c671e22f8c")
 		)
 		(fp_text user "${REFERENCE}"
-			(at -1.27 -11.43 360)
+			(at -1.27 -11.43 0)
 			(layer "B.Fab")
 			(uuid "90110a3c-5b92-418d-abee-b23a76e3f8dd")
 			(effects
@@ -15584,15 +15584,15 @@
 	)
 	(dimension
 		(type aligned)
-		(layer "F.Cu")
+		(layer "Dwgs.User")
 		(uuid "6d955c9e-3738-47be-bb60-173f9b5f40b2")
 		(pts
-			(xy 121.2011 90.05) (xy 121.2011 124.65)
+			(xy 138.3511 90.1) (xy 138.3511 124.7)
 		)
 		(height 24.5)
 		(gr_text "34.6 mm"
-			(at 94.9011 107.35 90)
-			(layer "F.Cu")
+			(at 112.0511 107.4 90)
+			(layer "Dwgs.User")
 			(uuid "6d955c9e-3738-47be-bb60-173f9b5f40b2")
 			(effects
 				(font
@@ -15618,15 +15618,15 @@
 	)
 	(dimension
 		(type aligned)
-		(layer "F.Cu")
+		(layer "Dwgs.User")
 		(uuid "f4b6c480-d7b9-4150-b77b-9808d0f9b1cf")
 		(pts
-			(xy 126.2011 87.95) (xy 156.3 87.95)
+			(xy 126.1511 92.35) (xy 156.25 92.35)
 		)
 		(height -6.2)
 		(gr_text "30.1 mm"
-			(at 141.25055 79.95 0)
-			(layer "F.Cu")
+			(at 141.20055 84.35 0)
+			(layer "Dwgs.User")
 			(uuid "f4b6c480-d7b9-4150-b77b-9808d0f9b1cf")
 			(effects
 				(font
