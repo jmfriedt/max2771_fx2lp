@@ -2,7 +2,7 @@
 # sudo app/pocket_conf/pocket_conf 
 # sudo app/pocket_dump/pocket_dump -r -t 5 ch1.bin ch2.bin
 # /!\ -r for raw output
-fs=24e6;
+fs=16e6;
 
 f=fopen("ch1.bin")
 d=fread(f,1e6,'int8'); 

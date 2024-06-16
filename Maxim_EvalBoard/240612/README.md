@@ -24,4 +24,7 @@ at 1575.42 MHz, 8-bit IQ interleaved, 4 MHz sampling frequency
 at 1572.42 MHz and 3 MHz IF, 8-bit I only, 12 MHz sampling frequency
 * GPS_4MSps_IF0MHz.bin: GPS L1 antenna, LO frequency at 1575.42 MHz, 8-bit IQ interleaved, 4 MHz sampling frequency
 * GPS_12MSps_IF3MHz.bin: GPS L1 antenna, LO frequency at 1575.42 MHz, 8-bit I only, 12 MHz sampling frequency 
-* go.m: processing script
+* goCW.m: processing script for continuous wave tone analysis
+* goGPS.m: processing script for GPS signal assessment, producing
+
+<img src="squared.png" width=300>
