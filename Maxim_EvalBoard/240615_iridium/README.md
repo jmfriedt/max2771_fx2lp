@@ -19,3 +19,7 @@ The result looks like a convincing Iridium spectrum when executing ``pocket_dump
 
 <img src="iridium_16MHz.png">
 
+Adding a Zero-MQ Publish block allows feeding ``gr-iridium`` with the frequency transposed
+and filtered output to decode the payload:
+
+<img src="iridium_16MHz_gr-iridium.png">
