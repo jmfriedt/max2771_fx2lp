@@ -27,4 +27,4 @@ at 1572.42 MHz and 3 MHz IF, 8-bit I only, 12 MHz sampling frequency
 * goCW.m: processing script for continuous wave tone analysis
 * goGPS.m: processing script for GPS signal assessment, producing
 
-<img src="squared.png" width=300>
+<img src="squared.png" width=500>
