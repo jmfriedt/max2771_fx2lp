@@ -28,7 +28,7 @@ options:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [208, 24.0]
+    coordinate: [8, 224.0]
     rotation: 0
     state: enabled
 
@@ -37,19 +37,19 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 4.1e6
+    value: 5.96e6
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [232, 168.0]
+    coordinate: [112, 8.0]
     rotation: 0
     state: enabled
 - name: samp_rate
   id: variable
   parameters:
     comment: ''
-    value: 16e6
+    value: 24e6
   states:
     bus_sink: false
     bus_source: false
@@ -72,7 +72,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [384, 204.0]
+    coordinate: [384, 212.0]
     rotation: 0
     state: enabled
 - name: blocks_char_to_float_0
@@ -83,13 +83,48 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    scale: '1'
+    scale: '127'
     vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
     coordinate: [232, 112.0]
+    rotation: 0
+    state: enabled
+- name: blocks_complex_to_interleaved_char_0
+  id: blocks_complex_to_interleaved_char
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale_factor: '127'
+    vector_output: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [640, 120.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_0
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: /tmp/iridium.bin
+    type: byte
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [800, 112.0]
     rotation: 0
     state: enabled
 - name: blocks_file_source_0
@@ -131,7 +166,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [384, 104.0]
+    coordinate: [416, 104.0]
     rotation: 0
     state: enabled
 - name: qtgui_freq_sink_x_0_0
@@ -163,7 +198,8 @@ blocks:
     color7: '"yellow"'
     color8: '"dark red"'
     color9: '"dark green"'
-    comment: "sudo pocket_conf  pocket_L1L6_12MHz.conf \nsudo pocket_dump -r - > /tmp/fifo"
+    comment: "sudo pocket_conf  pocket_iridium_24MHz.conf \nsudo pocket_dump -r -\
+      \ > /tmp/fifo"
     ctrlpanel: 'False'
     fc: '0'
     fftsize: '16384'
@@ -212,7 +248,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [688, 32.0]
+    coordinate: [672, 200.0]
     rotation: 0
     state: enabled
 - name: qtgui_time_sink_x_0
@@ -230,7 +266,7 @@ blocks:
     alpha7: '1.0'
     alpha8: '1.0'
     alpha9: '1.0'
-    autoscale: 'False'
+    autoscale: 'True'
     axislabels: 'True'
     color1: blue
     color10: dark blue
@@ -309,9 +345,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [456, 16.0]
+    coordinate: [416, 16.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: zeromq_pub_sink_0
   id: zeromq_pub_sink
   parameters:
@@ -331,14 +367,16 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [688, 184.0]
+    coordinate: [672, 0.0]
     rotation: 0
-    state: enabled
+    state: disabled
 
 connections:
 - [blocks_char_to_float_0, '0', freq_xlating_fir_filter_xxx_0, '0']
 - [blocks_char_to_float_0, '0', qtgui_time_sink_x_0, '0']
+- [blocks_complex_to_interleaved_char_0, '0', blocks_file_sink_0, '0']
 - [blocks_file_source_0, '0', blocks_char_to_float_0, '0']
+- [freq_xlating_fir_filter_xxx_0, '0', blocks_complex_to_interleaved_char_0, '0']
 - [freq_xlating_fir_filter_xxx_0, '0', qtgui_freq_sink_x_0_0, '0']
 - [freq_xlating_fir_filter_xxx_0, '0', zeromq_pub_sink_0, '0']
 
