@@ -15,8 +15,6 @@ spectra is inefficient. ``pocket_dump`` is able to stream data to stdout
 so a named pipe (``mkfifo /tmp/fifo``) is used to feed a GNU Radio File Source
 and display the spectra continuously.
 
-<img src="fifo.png">
-
 The result looks like a convincing Iridium spectrum when executing ``pocket_dump -r - > /tmp/fifo``:
 
 <img src="iridium_16MHz.png">
