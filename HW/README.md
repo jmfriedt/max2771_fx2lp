@@ -32,7 +32,12 @@ the poor quality TCXO whereas the default is to search for 5 kHz (theoretical
 Doppler shift maximum assuming a perfect reference clock, e.g. Rb, Cs or HM 
 source or good quality OCXO).
 
+First demonstration, Doppler limited to 30 kHz offset from carrier:
+
 <img src="2024-06-30-135856_2944x1080_scrot.png">
+
+Second demonstration, Doppler extended to 40 kHz offset from carrier matching the mobile phone
+measurements:
 
 <img src="2024-06-30-144230_2944x1080_scrot.png">
 
