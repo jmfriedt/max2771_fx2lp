@@ -33,3 +33,9 @@ Doppler shift maximum assuming a perfect reference clock, e.g. Rb, Cs or HM
 source or good quality OCXO).
 
 <img src="2024-06-30-135856_2944x1080_scrot.png">
+
+<img src="2024-06-30-144230_2944x1080_scrot.png">
+
+Experimental setup:
+
+<img src="IMG_20240630_143603_058.jpg" width=400>
