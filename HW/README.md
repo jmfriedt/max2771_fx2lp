@@ -43,4 +43,4 @@ measurements:
 
 Experimental setup:
 
-<img src="IMG_20240630_143603_058.jpg" width=400>
+<img src="IMG_20240630_143603_058.jpg" width=700>
