@@ -3,6 +3,10 @@ of the board fitted with two MAX2771
 
 <img src="IMG_20240705_204506_398.jpg">
 
+Notice the DC blockers between the PlutoSDR output and the DC-passing combiner, without which
+the power supply of the FX2LP used to power the active antennas would be drawn to ground by
+the protective diodes on the RF output, preventing the MAX2771 from being powered.
+
 The screenshots of the ``pluto-gps-sim`` output indicating which SV signals are broadcast,
 and the resulting data collection by the FX2LP
 
