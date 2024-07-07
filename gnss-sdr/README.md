@@ -27,7 +27,7 @@ Current receiver time: 2 min 9 s
 Loss of lock in channel 0!
 ```
 
-or for another run (since ``gnss-sdr`` is not deterministic (this time using SV 08, 10, 21, and 32
+or for another run, since ``gnss-sdr`` is not deterministic (this time using SV 08, 10, 21, and 32
 instead of 02, 10, 27 and 32):
 
 ```
