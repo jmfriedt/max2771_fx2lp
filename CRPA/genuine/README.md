@@ -5,3 +5,5 @@ on the celestial sphere. See the other spoofing example where a singls PlutoSDR
 generates all GPS signals, with a single direction of arrival for all signals,
 a strong indicator of spoofing.
 
+<img src="crpa.svg">
+
