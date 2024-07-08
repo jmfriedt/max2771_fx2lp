@@ -1,6 +1,6 @@
 ## MAX2771 for FX2LP
 
-### Objective: multi-MAX2771 GNSS receiver 
+### Objective: multi-MAX2771 GNSS receiver with up to 48 MS/s
 
 ... for
 * multiband acquisition and processing if a power combiner (MiniCircuits ZAPD-2DC+)
