@@ -1,4 +1,6 @@
-### Bitbanged SPI triggered by USB Vendor Request transactions
+## Bitbanged SPI triggered by USB Vendor Request transactions
+
+### Using the binary PocketSDR firmware compiled with the proprietary Keil compiler
 
 Using a FX2LP started with the EEPROM firmware (closed jumper on EEPROM) and 
 programming the PocketSDR firmware with 
@@ -53,3 +55,18 @@ b'105dc0010101'      # VR_STAT
 b'08f25970'          # read content of register 5: matches the previously written valule
 b'08f25970'          # write new value in register 5
 ```
+
+### Repeating the sdcc opensource compiler and associated libraries
+
+The ``vendor_cmd.c`` example aims at
+* providing the Vendor Request services and return information similar to thos of the PocketSDR
+firmware (demonstrating we understand how to handle the Vendor Request on the endpoint)
+* generate waveforms emulating SPI communication on the GPIOs (for configuring the MAX2771 and
+reading the configuration).
+
+```
+make                                         # compile vendor_cmd.c to buid/vendor_cmd.ihx
+sudo cycfx2prog prg:build/vendor_cmd.ihx run # flash
+sudo ./readwrite_FDIV.py                     # validate, with oscilloscope probes on PD2 and PD3
+```
+

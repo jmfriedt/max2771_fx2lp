@@ -37,8 +37,15 @@ if _platform == "linux" or _platform == "linux2":
 # dev.ctrl_transfer(bmRequestType, bRequest, wValue, wIndex, data)
 msg=bytearray([0x40,0x04,0x55,0xaa]);
 ret=dev.ctrl_transfer(bmRequestType=0xC0 ,bRequest=0x41, wValue=0xFF, wIndex=0, data_or_wLength=4)
+#  else if (SETUPDAT[1] == VR_REG_READ) {
+#    *(uint32_t *)EP0BUF = read_reg(SETUPDAT[3], SETUPDAT[2]);
+# returns 4 bytes
+
+# 0x155 to activate second CS#, 0x55 to activate first CS#
 dev.ctrl_transfer(0x40 , 0x42, 0x55, 0, msg) # write on SPI bus reg @ 0x55 int msg
-#print(binascii.hexlify(ret))                # b'105dc0010100'
+
+ret=dev.ctrl_transfer(0xC0,0x40, 0, 0, 10)  # read VR_STAT
+print(binascii.hexlify(ret))                # b'105dc0010100'
 # PocketSDR/FE_2CH/FW/v2.1/pocket_fw.c 
 #   EP0BUF[0] = VER_FW;             // F/W version            0x10
 #   EP0BUF[1] = MSB(F_TCXO);        // TCXO Frequency (kHz)   0x5D
@@ -47,10 +54,4 @@ dev.ctrl_transfer(0x40 , 0x42, 0x55, 0, msg) # write on SPI bus reg @ 0x55 int m
 #   EP0BUF[4] = digitalRead(STAT2); // MAX2771 CH2 PLL status (0:unlock,1:lock)
 #   EP0BUF[5] = digitalRead(LED2);  // Bulk transfer status (0:stop,1:start)
 # returns 6 bytes
-ret=dev.ctrl_transfer(0xC0,0x40, 0, 0, 10)  # read VR_STAT
-print(binascii.hexlify(ret))                # b'105dc0010100'
 
-#    ret=dev.ctrl_transfer(0xC0,0x41, 0, 0, [])  # write
-#  else if (SETUPDAT[1] == VR_REG_READ) {
-#    *(uint32_t *)EP0BUF = read_reg(SETUPDAT[3], SETUPDAT[2]);
-# returns 4 bytes
