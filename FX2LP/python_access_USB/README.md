@@ -1,3 +1,12 @@
+### Bitbanged SPI triggered by USB Vendor Request transactions
+
+Using a FX2LP started with the EEPROM firmware (closed jumper on EEPROM) and 
+programming the PocketSDR firmware with 
+```
+sudo cycfx2prog prg:PocketSDR/FE_2CH/FW/v2.1/pocket_fw.hex run
+```
+then we try to understand how SPI communicatin is triggered from USB commands.
+
 From ``PocketSDR/FE_2CH/FW/v2.1/pocket_fw.c`` we learn that calling 
 vendor request 0x40 (VR_STAT) returns 6 bytes with
 ```
@@ -18,8 +27,29 @@ frequency in kHz (0x5DC0) and status bytes.
 
 Running vendor requests 0x41 (read register) and 0x42 (write registers) with wValue the 8-bit
 register index, wIndex set to 0 and the last argument set to the written data in case of 0x42
-leads to the oscilloscope screenshot (yellow is Chip Select, orange is Clock and green is MOSI):
+leads to the oscilloscope screenshot (blue is Chip Select, purple is Clock and cyan is MOSI):
 
 <img src="Screenshot_2024-07-09_0_190915.png">
 
+with the oscilloscope probes connected to PD0 (CS#), PD2 (SCLK), and PD3 (SDATA). Adding one more
+probe (channel 4, yellow) to CSB#, we see that the most significant byte of wValue determines which 
+CS# is triggered, with 0x1FF or 0x155 triggering CSB# and 0xFF or 0x55 in wValue triggering CSA#.
 
+<img src="Screenshot_2024-07-10_0_080913.png">
+
+<img src="Screenshot_2024-07-10_1_080925.png">
+
+Repeating the operation with a FX2LP running from EEPROM the firmware and hence using VID:PID
+of 04b4:1004, we read and write register 5 of the MAX2771 to read the default FDIV value, write
+the wanted value and read the resulting value to check the value was properly stored
+
+```
+$ sudo ./readwrite_FDIV.py 
+b'105dc0010101'      # VR_STAT
+b'0647ae70'          # read default content of register 5 (MSB no the ones documented in datasheet!)
+b'08f25970'          # write new value in register 5
+$ sudo ./readwrite_FDIV.py 
+b'105dc0010101'      # VR_STAT
+b'08f25970'          # read content of register 5: matches the previously written valule
+b'08f25970'          # write new value in register 5
+```
