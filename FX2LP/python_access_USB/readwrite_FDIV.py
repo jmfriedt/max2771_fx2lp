@@ -13,6 +13,7 @@ VR_REG_WRITE 0x42       // USB vendor request: Write MAX2771 register
 
 import usb
 from sys import platform as _platform
+import time
 import binascii
 
 VID = 0x04B4
@@ -38,6 +39,8 @@ print(binascii.hexlify(ret))                # b'105dc0010100'
 msg=bytearray([0x08,0xF2,0x59,0x70]);
 ret=dev.ctrl_transfer(0xC0 ,0x41, 0x05, wIndex=0, data_or_wLength=4)
 print(binascii.hexlify(ret))                # b'105dc0010100'
+
+time.sleep(.1)
 dev.ctrl_transfer(0x40 , 0x42, 0x05, 0, msg) # write on SPI bus reg @ 0x55 int msg
 ret=dev.ctrl_transfer(0xC0 ,0x41, 0x05, wIndex=0, data_or_wLength=4)
 print(binascii.hexlify(ret))                # b'105dc0010100'

@@ -70,3 +70,17 @@ sudo cycfx2prog prg:build/vendor_cmd.ihx run # flash
 sudo ./readwrite_FDIV.py                     # validate, with oscilloscope probes on PD2 and PD3
 ```
 
+The oscilloscope output of the SPI bitbanged bus is as follows, following the reply
+
+```
+$ sudo ./readwrite_FDIV.py 
+b'105dc0010100'
+b'00000000'
+b'00000000'
+```
+
+demonstrating proper generation of the GPIO signals and transactions over the USB bus with
+the firmware compiled using ``sdcc``.
+
+<img src="Screenshot_2024-07-10_1_181522.png">
+

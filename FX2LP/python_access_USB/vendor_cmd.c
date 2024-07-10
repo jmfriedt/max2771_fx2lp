@@ -167,12 +167,14 @@ BOOL handle_vendorcommand(BYTE cmd) {
     EP0BCH = 0;
     EP0BCL = 6;
     return TRUE;
+    break;
   }
   case VR_REG_READ:
   {*(uint32_t *)EP0BUF = read_reg(SETUPDAT[3], SETUPDAT[2]);
     EP0BCH = 0;
     EP0BCL = 4;
     return TRUE;
+    break;
   }
   case VR_REG_WRITE:
   {
@@ -181,6 +183,7 @@ BOOL handle_vendorcommand(BYTE cmd) {
     while (EP0CS & bmEPBUSY) ;
     write_reg(SETUPDAT[3], SETUPDAT[2], *(uint32_t *)EP0BUF);
     return TRUE;
+    break;
   }
   default:
  }
