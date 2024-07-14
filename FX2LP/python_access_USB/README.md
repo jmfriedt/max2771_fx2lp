@@ -83,4 +83,3 @@ demonstrating proper generation of the GPIO signals and transactions over the US
 the firmware compiled using ``sdcc``.
 
 <img src="Screenshot_2024-07-10_1_181522.png">
-
