@@ -43,4 +43,3 @@ dev.ctrl_transfer(0x40 , 0x42, 0x03, 0, msg) # write on SPI bus reg @ 0x03 int m
 ret=dev.ctrl_transfer(0xC0 ,0x41, 0x03, wIndex=0, data_or_wLength=4)
 val=int.from_bytes(ret, "big") # big or little
 print(f"03 after:  {binascii.hexlify(ret)} {val:#x}")
-
