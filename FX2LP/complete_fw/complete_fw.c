@@ -5,7 +5,11 @@
 #include <autovector.h>
 #include <setupdat.h>
 #include <eputils.h>
-//#include <stdint.h>
+#include <i2c.h>
+
+static void load_default(void);
+static void load_settings(void);
+static void save_settings(void);
 
 #define SYNCDELAY SYNCDELAY4
 
@@ -112,8 +116,8 @@ void setup(void) {
   digitalWrite(SCLK, 0);
 
 //  EZUSB_InitI2C();  // JMF
-//  load_default();   // JMF
-//  load_settings();  // JMF
+  load_default();
+  load_settings();  // JMF
 
   jmfdelay(255);
   start_bulk();
@@ -242,7 +246,7 @@ BOOL handle_vendorcommand(BYTE cmd) {
   }
   case VR_REG_READ:
   { val32=read_reg(SETUPDAT[3], SETUPDAT[2]);
-    *(uint32_t *)EP0BUF = bswap32(val32);
+    *(uint32_t *)EP0BUF = bswap32(val32);                        // JMF endianness change
     EP0BCH = 0;
     EP0BCL = 4;
     return TRUE;
@@ -255,7 +259,7 @@ BOOL handle_vendorcommand(BYTE cmd) {
     while (EP0CS & bmEPBUSY) ;
     val32=*(uint32_t *)EP0BUF;
     val32=bswap32(val32);
-    // write_reg(SETUPDAT[3], SETUPDAT[2], *(uint32_t *)EP0BUF); JMF
+    // write_reg(SETUPDAT[3], SETUPDAT[2], *(uint32_t *)EP0BUF); // JMF endianness change
     write_reg(SETUPDAT[3], SETUPDAT[2], val32);
     return TRUE;
     break;
@@ -279,6 +283,30 @@ BOOL handle_vendorcommand(BYTE cmd) {
     return TRUE;
     break;
   }
+  case VR_SAVE: 
+  { EP0BCH = EP0BCL = 0;
+    save_settings();
+    return TRUE;
+    break;
+  }
+#ifdef ENA_VR_EE // disabled to save code size
+  case VR_EE_READ: 
+  { if (len > 64) return TRUE;
+    eeprom_read(I2C_ADDR, val, (uint8_t)len, EP0BUF);
+    EP0BCH = 0;
+    EP0BCL = (uint8_t)len;
+    return TRUE;
+    break;
+  }
+  case VR_EE_WRITE: 
+  { if (len > 64 || val < EE_ADDR_0 || val + len > EE_ADDR_1) {
+        return TRUE;
+    }
+    EP0BCH = EP0BCL = 0;
+    while (EP0CS & bmEPBUSY) ;
+    eeprom_write(I2C_ADDR, val, (uint8_t)len, EP0BUF);
+  }
+#endif
   default:
  }
  return FALSE;
@@ -336,10 +364,16 @@ void hispeed_isr(void) __interrupt (HISPEED_ISR) {
   CLEAR_HISPEED();
 }
 
-
-
-
-
+// load default MAX2771 register settings --------------------------------------
+static void load_default(void) {
+  uint8_t cs, addr;
+  
+  for (cs = 0; cs < MAX_CH; cs++) {
+    for (addr = 0; addr < MAX_ADDR; addr++) {
+      write_reg(cs, addr, reg_default[cs][addr]);
+    }
+  }
+}
 //////// end of complete fw, start PockerSDR src code
 /*
 // read EEPROM -----------------------------------------------------------------
@@ -365,30 +399,20 @@ static void write_eeprom(uint16_t addr, uint8_t len, const uint8_t xdata *buff) 
     EZUSB_WaitForEEPROMWrite(I2C_ADDR);
   }
 }
-
-// load default MAX2771 register settings --------------------------------------
-static void load_default(void) {
-  uint8_t cs, addr;
-  
-  for (cs = 0; cs < MAX_CH; cs++) {
-    for (addr = 0; addr < MAX_ADDR; addr++) {
-      write_reg(cs, addr, reg_default[cs][addr]);
-    }
-  }
-}
+*/
 
 // load MAX2771 register settings from EEPROM ----------------------------------
 static void load_settings(void) {
   uint16_t ee_addr = EE_ADDR_S;
-  uint32_t xdata reg;
+  uint32_t __xdata reg;
   uint8_t cs, addr;
   
-  read_eeprom(EE_ADDR_H, 4, (uint8_t xdata *)&reg);
+  eeprom_read(I2C_ADDR, EE_ADDR_H, 4, (uint8_t __xdata *)&reg);
   if (reg != HEAD_REG) return;
   
   for (cs = 0; cs < MAX_CH; cs++) {
     for (addr = 0; addr < MAX_ADDR; addr++) {
-      read_eeprom(ee_addr, 4, (uint8_t xdata *)&reg);
+      eeprom_read(I2C_ADDR, ee_addr, 4, (uint8_t __xdata *)&reg);
       write_reg(cs, addr, reg);
       ee_addr += 4;
     }
@@ -398,17 +422,16 @@ static void load_settings(void) {
 // save MAX2771 register settings to EEPROM ------------------------------------
 static void save_settings(void) {
   uint16_t ee_addr = EE_ADDR_S;
-  uint32_t xdata reg = HEAD_REG;
+  uint32_t __xdata reg = HEAD_REG;
   uint8_t cs, addr;
   
-  write_eeprom(EE_ADDR_H, 4, (uint8_t xdata *)&reg);
+  eeprom_write(I2C_ADDR, EE_ADDR_H, 4, (uint8_t __xdata *)&reg);
   
   for (cs = 0; cs < MAX_CH; cs++) {
     for (addr = 0; addr < MAX_ADDR; addr++) {
       reg = read_reg(cs, addr);
-      write_eeprom(ee_addr, 4, (uint8_t xdata *)&reg);
+      eeprom_write(I2C_ADDR, ee_addr, 4, (uint8_t __xdata *)&reg);
       ee_addr += 4;
     }
   }
 }
-*/
