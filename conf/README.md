@@ -2,8 +2,24 @@
 
 Assuming both MAX2771 are fitted with the inductor and capacitor for reaching the upper L-band (L1)
 and that LNAHi is connected to MixHi using the appropriate straps (0402 resistors), then
-* run ``pluto-gps-sim`` on a PlutoSDR whose output is connected to a ZAPD-2-21-3W-S splitter feeding
-both MAX2771 inputs with
+* flash the ``../FX2LP/pocket_fw_FE_2CH_v2.1.hex`` official firmware from the PocketSDR in the FX2LP board
+EEPROM. This is achieved by removing the EEPROM jumper, checking with ``lsusb`` that the EZ USB appears
+as
+```
+Bus 001 Device 080: ID 04b4:8613 Cypress Semiconductor Corp. CY7C68013 EZ-USB FX2 USB 2.0 Development Kit
+```
+is with VID=04B4 et PID=8613. Notice the bus number and device number and use them as argument to ``fxload``
+```
+sudo ./fxload -D /dev/bus/usb/001/080 -I ../FX2LP/pocket_fw_FE_2CH_v2.1.hex -c 0xc2 -s Vend_Ax.hex -t fx2lp
+```
+executed from the ``fxload`` directory (where ``Vend_Ax.hex`` is located) will flash the EEPROM. Power off
+and back on the FX2LP and now the peripheral should appear as
+```
+Bus 001 Device 081: ID 04b4:1004 Cypress Semiconductor Corp. EZ-USB
+```
+i.e. VID=04B4 et PID=1004.
+* in order to generate a known GNSS signal for qualifying the MAX2771 circuits, run ``pluto-gps-sim`` on a 
+PlutoSDR whose output is connected to a ZAPD-2-21-3W-S splitter feeding both MAX2771 inputs with
 ```
 $ ./pluto-gps-sim -e hour0730.20n -U usb:1.69.5 -A -60.0 -t 2020/03/13,18:00:00 -l 48.3621221,-4.8223307,100
 Using static location mode.
@@ -15,6 +31,9 @@ PRN   Az    El     Range     Iono
 05   20.6   2.4  25438648.9   5.3
 ...
 ```
+
+<img src="https://github.com/jmfriedt/max2771_fx2lp/blob/main/CRPA/plutosdr/IMG_20240705_204506_398.jpg">
+
 * configure the MAX2771 to analyze the L1 band with 8 MHz bandwidth and 2 MHz IF:
 ```
 $ sudo ./app/pocket_conf/pocket_conf conf/pocket_L1L1_8MHz.conf 
@@ -79,3 +98,39 @@ TIME = 6.129 s
 ```
 with PRN 4, 5, 8, 9, 10, 16, 20, 21, 26, 29, 31 highlighted in blue, matching the 
 signals broadcast by ``pluto-gps-sim``.
+
+### setting ADC speed
+
+ADC clock with f(xtal)=24 MHz:
+
+```
+REFFRACDIV_SEL=1, REFDIV=3 for x1, LCNT=2048 for 1/3: 24x1/3=8 MHz
+```
+
+since 
+
+```
+* PREFRACDIV_SEL  =       1  # Clock pre-divider selection (0:bypass,1:enable)
+* REFCLK_L_CNT    =    2048  # Clock pre-divider L counter value (0-4095): L_CNT/(4096-M_CNT+L_CNT)
+* REFCLK_M_CNT    =       0  # Clock pre-divider M counter value (0-4095)
+* ADCCLK          =       0  # Integer clock div/mul selection (0:enable,1:bypass)
+* REFDIV          =       3  # Integer clock div/mul ratio (0:x2,1:1/4,2:1/2,3:x1,4:x4)
+* FCLKIN          =       0  # ADC clock divider selection (0:bypass,1:enable)
+* ADCCLK_L_CNT    =       0  # ADC clock divider L counter value (0-4095): L_CNT/(4096-M_CNT+L_CNT)
+* ADCCLK_M_CNT    =       0  # ADC clock divider M counter value (0-4095)
+```
+
+### checking register writing and reading
+
+From the MAX2771, registers 0 and 10 are organized as follows with their default value at reset
+
+<img src="reg00.png">
+
+<img src="reg10.png">
+
+so that for register 0: 10100010001001000001011000000011 split as nibbles with 1010 0010 0010 0100 0001 0110 0000 0011 interpreted as 0xA2241603
+
+and for register 10: 00000001000000000110000110110000 split as nibbles with 0000 0001 0000 0000 0110 0001 1011 0000 interpreted
+ as 0x10061B0. After setting Lcount to 2048 and Mcount to 0 with RefDiv=3 (for keeping the 24 MHz clock and dividing by 3
+to reach a sampling rate of 8 MHz), register 10 should become 0x08000000C.
+
