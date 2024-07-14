@@ -44,4 +44,3 @@ time.sleep(.1)
 dev.ctrl_transfer(0x40 , 0x42, 0x05, 0, msg) # write on SPI bus reg @ 0x55 int msg
 ret=dev.ctrl_transfer(0xC0 ,0x41, 0x05, wIndex=0, data_or_wLength=4)
 print(binascii.hexlify(ret))                # b'105dc0010100'
-

@@ -9,12 +9,22 @@
 
 #define SYNCDELAY SYNCDELAY4
 
+// https://www.keil.com/dd/docs/c51/silabs/shared/si8051base/endian.h
+#define bswap16(x) (((x) >> 8) | ((x) << 8))
+#define bswap32(x) (((x) >> 24) | (((x) & 0x00FF0000) >> 8) \
+                  | (((x) & 0x0000FF00) << 8) | ((x) << 24))
+
+void jmfdelay(int i)
+{int k;
+ for (k=i;k>0;k--) {};}
+
 volatile __bit got_sud;
 
 void main(void) {
  REVCTL=0; // not using advanced endpoint controls
  got_sud=FALSE;
 
+// CPUCS         = 0x12; SYNCDELAY; // CPU: CLKSPD=48MHz, CLKOE=FLOAT  JMF aucun effet sur SPI sur GPIO
  RENUMERATE_UNCOND(); 
  SETCPUFREQ(CLK_48M);
  SETIF48MHZ();
@@ -23,6 +33,7 @@ void main(void) {
  ENABLE_SOF();
  ENABLE_HISPEED();
  ENABLE_USBRESET();
+
  EA=1; // global interrupt enable 
  while(TRUE) {
     if ( got_sud ) { handle_setupdata(); got_sud=FALSE;}
@@ -41,7 +52,7 @@ void main(void) {
 #define STAT2        5          // EZ-USB FX2 PD5 <-  MAX2771 CH2 LD
 #define LED1         6          // EZ-USB FX2 PD6  -> LED1
 #define LED2         7          // EZ-USB FX2 PD7  -> LED2
-#define SCLK_CYC     5          // SPI SCLK delay
+#define SCLK_CYC     2          // SPI SCLK delay  // JMF 5 -> 2
 
 #define BIT(port)    ((uint8_t)1<<(port))
 #define WORD_(bytes) (((uint16_t)(bytes)[1]<<8) + (bytes)[0])
@@ -61,9 +72,9 @@ static void digitalWrite(uint8_t port, uint8_t dat) {
 // write SPI SCLK --------------------------------------------------------------
 static void write_sclk(void) {
   digitalWrite(SCLK, 1);
-  delay(SCLK_CYC);
+  jmfdelay(SCLK_CYC);
   digitalWrite(SCLK, 0);
-  delay(SCLK_CYC);
+  jmfdelay(SCLK_CYC);
 }
 
 BOOL handle_get_descriptor(void) {
@@ -95,7 +106,7 @@ static void write_head(uint16_t addr, uint8_t mode) {
   for (i = 0; i < 3; i++) {
     write_sdata(0);
   }
-  delay(SCLK_CYC);
+  jmfdelay(SCLK_CYC);
 }
 
 // write MAX2771 register ------------------------------------------------------
@@ -128,20 +139,6 @@ static uint32_t read_reg(uint8_t cs, uint8_t addr) {
 }
 
 // constants and macros -------------------------------------------------------
-#define VER_FW       0x10       // Firmware version
-#ifndef F_TCXO
-#define F_TCXO       24000      // TCXO frequency (kHz)
-#endif
-#define CSN1         0          // EZ-USB FX2 PD0  -> MAX2771 CH1 CSN
-#define CSN2         1          // EZ-USB FX2 PD1  -> MAX2771 CH2 CSN
-#define SCLK         2          // EZ-USB FX2 PD2  -> MAX2771 SCLK
-#define SDATA        3          // EZ-USB FX2 PD3 <-> MAX2771 SDATA
-#define STAT1        4          // EZ-USB FX2 PD4 <-  MAX2771 CH1 LD
-#define STAT2        5          // EZ-USB FX2 PD5 <-  MAX2771 CH2 LD
-#define LED1         6          // EZ-USB FX2 PD6  -> LED1
-#define LED2         7          // EZ-USB FX2 PD7  -> LED2
-#define SCLK_CYC     5          // SPI SCLK delay
-
 #define VR_STAT      0x40       // USB vendor request: Get device info and status
 #define VR_REG_READ  0x41       // USB vendor request: Read MAX2771 register
 #define VR_REG_WRITE 0x42       // USB vendor request: Write MAX2771 register
@@ -155,6 +152,7 @@ static uint32_t read_reg(uint8_t cs, uint8_t addr) {
 BOOL handle_vendorcommand(BYTE cmd) {
  uint16_t len = WORD_(SETUPDAT + 6);
  uint16_t val = WORD_(SETUPDAT + 2);
+ uint32_t val32;
  switch ( cmd ) {
   case VR_STAT:
   {
@@ -170,7 +168,8 @@ BOOL handle_vendorcommand(BYTE cmd) {
     break;
   }
   case VR_REG_READ:
-  {*(uint32_t *)EP0BUF = read_reg(SETUPDAT[3], SETUPDAT[2]);
+  { val32=read_reg(SETUPDAT[3], SETUPDAT[2]);
+    *(uint32_t *)EP0BUF = bswap32(val32);
     EP0BCH = 0;
     EP0BCL = 4;
     return TRUE;
@@ -181,7 +180,10 @@ BOOL handle_vendorcommand(BYTE cmd) {
     if (len < 4) return TRUE;
     EP0BCH = EP0BCL = 0;
     while (EP0CS & bmEPBUSY) ;
-    write_reg(SETUPDAT[3], SETUPDAT[2], *(uint32_t *)EP0BUF);
+    val32=*(uint32_t *)EP0BUF;
+    val32=bswap32(val32);
+    // write_reg(SETUPDAT[3], SETUPDAT[2], *(uint32_t *)EP0BUF); JMF
+    write_reg(SETUPDAT[3], SETUPDAT[2], val32);
     return TRUE;
     break;
   }
@@ -201,13 +203,6 @@ BOOL handle_set_interface(BYTE ifc, BYTE alt_ifc) {
     // reset toggles
     RESETTOGGLE(0x02);
     RESETTOGGLE(0x86);
-    // restore endpoints to default condition
-    RESETFIFO(0x02);
-    EP2BCL=0x80;
-    SYNCDELAY;
-    EP2BCL=0X80;
-    SYNCDELAY;
-    RESETFIFO(0x86);
     return TRUE;
  } else 
     return FALSE;
