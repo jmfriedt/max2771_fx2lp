@@ -120,7 +120,7 @@ since
 * ADCCLK_M_CNT    =       0  # ADC clock divider M counter value (0-4095)
 ```
 
-### checking register writing and reading
+### Checking register writing and reading
 
 From the MAX2771, registers 0 and 10 are organized as follows with their default value at reset
 
@@ -134,3 +134,7 @@ and for register 10: 00000001000000000110000110110000 split as nibbles with 0000
  as 0x10061B0. After setting Lcount to 2048 and Mcount to 0 with RefDiv=3 (for keeping the 24 MHz clock and dividing by 3
 to reach a sampling rate of 8 MHz), register 10 should become 0x08000000C.
 
+Reading and writing these register values with the original PocketSDR firmware or with our SDCC generated firmware
+led to opposite endianneess reports, leading to the discovery that Keil and SDCC compilers are opposite endianness
+and that the cast from ``char*`` to ``int32_t`` would swap bytes if not taken care of manually. The SDCC code was
+corrected accordingly.
