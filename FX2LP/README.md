@@ -2,11 +2,18 @@
 
 The original https://github.com/tomojitakasu/PocketSDR software relies
 on the proprietary Keil compiler to generate the firmware running in the
-FX2LP handling the bulk endpoint communication.
+FX2LP handling the USB bulk endpoint communication and SPI configuration
+of the MAX2771 through USB Vendor Requests.
 
 The objective is to replace the use of the proprietary compiler with ``sdcc``,
 and in the mean time learn the interals on the 8051 core controlling the
 FX2LP.
 
+* ``pocket_fw_FE_2CH_v2.1.hex`` the original firmware from PocketSDR for initial
+tests
 * ``LED_blink``: basic LED blinking example demonstrating the usage of the
-``fx2lib`` library
+``fx2lib`` library and ``sdcc`` for generating 8051 firmware.
+* ``python_access_USB`` for becoming familiar with Python3 interaction with the
+USB bus and reading/writing MAX2771 registers through bitbanged SPI
+* ``complete_fw`` includes bitbanged SPI and USB Bulk endpoint communication, final
+firmware with all core functionalities.
