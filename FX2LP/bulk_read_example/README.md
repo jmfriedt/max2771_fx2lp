@@ -2,6 +2,8 @@
 
 ## Execution from RAM
 
+<img src="jumper4.jpg">
+
 Close J4 jumper, switch off and on (to start in bootloader mode), then
 ```
 make
