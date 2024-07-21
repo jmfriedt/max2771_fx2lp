@@ -17,7 +17,9 @@ Assembled daughter board: the missing 24 MHz oscillator is replaced with the
 24 MHz output from one of the resonator pins fitted on the FX2LP board. However,
 the frequency pulling by the capacitor leads to a 3 kHz offset (2 ppm) which must
 be compensated for when processing (acquisition phase of GNSS signal analysis) the
-recorded signals.
+recorded signals. This feature is however illustrated to emphasize that the GNSS
+receiver can be clocked by an external (24 MHz) source, a capability missing from most
+commercial GNSS receivers.
 
 Processing relies on the PocketSDR software provided by Tomoji Takasu at
 https://github.com/tomojitakasu/PocketSDR.
