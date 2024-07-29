@@ -35,11 +35,13 @@ cut -d\  -f3 record | sed 's/dt=//g' > dt
 and with GNU/Octave:
 ```
 load dt
+k=find(dt>1E-10);dt=dt(k);
 subplot(211);plot(dt)
 [a,b]=polyfit([1:length(dt)],dt,1);
 a(1)
-subplot(212);plot(dt-b.yf);
-y=[[1:length(dt)]' dt-b.yf];
+res=dt-b.yf;
+subplot(212);plot(res);
+y=[[1:length(res)]' res];
 save -ascii y y
 ```
 and using SigmaTheta:
