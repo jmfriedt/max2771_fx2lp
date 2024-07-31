@@ -87,6 +87,6 @@ Three hour continuous acquisition allowing for the display of the Allan deviatio
 
 <img src="record1.svg">
 
->24 hour record with signal loss by gnss-sdr:
+$>24$ hour record with signal loss by gnss-sdr:
 
 <img src="record3.svg">
