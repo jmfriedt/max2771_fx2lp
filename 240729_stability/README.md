@@ -86,7 +86,6 @@ Make sure to *enable* ``PVT.enable_protobuf=true`` in the ``gnss-sdr`` configura
 Three hour continuous acquisition allowing for the display of the Allan deviation:
 
 <img src="record1.svg">
-<img src="y.svg">
 
 >24 hour record with signal loss by gnss-sdr:
 
