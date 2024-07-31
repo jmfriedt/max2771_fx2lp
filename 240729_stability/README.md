@@ -1,5 +1,7 @@
 ## TCXO stability v.s GNSS
 
+### Communication setup
+
 <img src="setup.png">
 
 1. create FIFO with
@@ -59,6 +61,10 @@ results in
 
 <img src="y.svg">
 
+See below for the raw data
+
+### Protobuf management in Python
+
 The script ``jmf.py`` is using ``monitor_pvt_pb2.py`` which was generated from ``gnss-sdr/docs/protobuf`` by running
 ```
 protoc monitor_pvt.proto --cpp_out=. --python_out=.
@@ -71,8 +77,10 @@ Make sure to *enable* ``PVT.enable_protobuf=true`` in the ``gnss-sdr`` configura
 Compare with the results of https://hamsci.org/sites/default/files/publications/2020_TAPR_DCC/N8UR_GPS_Evaluation_August2020.pdf: 
 4e-9 at 1s for the Zed-F9P, 1E-8 at 1s for NEO-M8*
 
-The Allan deviation minimizes at $tau=200$ s so the time constant of the control loop implemented as $y(n+1)=y(n)+b.(x(n)-y(n-1))$
+The Allan deviation minimizes at $\tau=200$ s so the time constant of the control loop implemented as $y(n+1)=y(n)+b.(x(n)-y(n-1))$
 with $b=1-d$ where $\tau=-1/\ln(d)$ or $d=\exp(-1/\tau)=exp(-1/200)=0.995$ so that $b=5e-3$ (see https://tomroelandts.com/articles/low-pass-single-pole-iir-filter for the detailed demonstration)
+
+### Raw data results
 
 Three hour continuous acquisition allowing for the display of the Allan deviation:
 
