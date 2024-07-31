@@ -1,4 +1,4 @@
-### TCXO stability v.s GNSS
+## TCXO stability v.s GNSS
 
 <img src="setup.png">
 
@@ -30,18 +30,24 @@ python3 ./jmf.py > record
 ```
 7. analyze the result
 ```
-cut -d\  -f3 record | sed 's/dt=//g' > dt
+cut -d\  -f2,3 record | sed 's/dt=//g' | sed 's/TOW=//g' > dt
 ```
 and with GNU/Octave:
 ```
 load dt
-k=find(dt>1E-10);dt=dt(k);
-subplot(211);plot(dt)
-[a,b]=polyfit([1:length(dt)],dt,1);
+k=find(abs(dt(:,2))>2E-10);dt=dt(k,:);
+k=find(diff(dt(:,2))>10e-3);
+for l=1:length(k)
+  dt(k(l)+1:end,2)=dt(k(l)+1:end,2)-20e-3;
+end
+subplot(211);plot((dt(:,1)-dt(1,1))/1000/3600,dt(:,2),'.')
+[a,b]=polyfit((dt(:,1)-dt(1,1))/1000,dt(:,2),1);
 a(1)
-res=dt-b.yf;
-subplot(212);plot(res);
-y=[[1:length(res)]' res];
+ylabel('local time-GPS time (s)');legend(num2str(a(1)))
+res=dt(:,2)-b.yf;
+subplot(212);plot((dt(:,1)-dt(1,1))/1000/3600,res,'.');
+xlabel('time (h)');ylabel('local time-GPS time (s)')
+y=[(dt(:,1)-dt(1,1))/1000 res];
 save -ascii y y
 ```
 and using SigmaTheta:
@@ -61,3 +67,18 @@ and requires the Debian package ``python3-protobuf``. The ``from monitor_pvt_pb2
 ``gnss-sdr/docs/protobuf/monitor_pvt.proto`` starting with ``message MonitorPvt ...``
 
 Make sure to *enable* ``PVT.enable_protobuf=true`` in the ``gnss-sdr`` configuration file 
+
+Compare with the results of https://hamsci.org/sites/default/files/publications/2020_TAPR_DCC/N8UR_GPS_Evaluation_August2020.pdf: 
+4e-9 at 1s for the Zed-F9P, 1E-8 at 1s for NEO-M8*
+
+The Allan deviation minimizes at $tau=200$ s so the time constant of the control loop implemented as $y(n+1)=y(n)+b.(x(n)-y(n-1))$
+with $b=1-d$ where $\tau=-1/\ln(d)$ or $d=\exp(-1/\tau)=exp(-1/200)=0.995$ so that $b=5e-3$ (see https://tomroelandts.com/articles/low-pass-single-pole-iir-filter for the detailed demonstration)
+
+Three hour continuous acquisition allowing for the display of the Allan deviation:
+
+<img src="record1.svg">
+<img src="y.svg">
+
+>24 hour record with signal loss by gnss-sdr:
+
+<img src="record3.svg">
