@@ -99,12 +99,12 @@ From the openloop measurement:
 1. the data were linearly interpolated to compensate for missing measurements (time offset smaller vers 0.1 ns or unlocked gnss-sdr)
 and filtered using an IIR with time constant of 200 s (minimum of the Allan deviation on a continuous measurement)
 
-<img src="fig1.png", width=600>
+<img src="fig1.png" width=600>
 
 2. the frequency offset was applied to the openloop measurements to correct for TCXO inaccuracy (openloop correction)
 
-<img src="fig2.png", width=600>
+<img src="fig2.png" width=600>
 
 3. a closed loop control was applied on the measured time delay to compensate for TCXO frequency offset and cancel the time delay
 
-<img src="fig3.png", width=600>
+<img src="fig3.png" width=600>
