@@ -4,12 +4,12 @@
 
 <img src="setup.png">
 
-1. create FIFO with
+1. create a FIFO with
 ```
 mkfifo /tmp/fifo1in
 chmod 777 /tmp/fifo1in
 ```
-2. configure MAX2771 for 8 MS/s and 2 MHz IF, and check PocketSDR configuration
+2. configure the MAX2771 for 8 MS/s and 2 MHz IF, and check PocketSDR configuration
 ```
 sudo app/pocket_conf/pocket_conf pocket_L1L1_8MHz.conf
 sudo app/pocket_conf/pocket_conf
@@ -18,38 +18,40 @@ sudo app/pocket_conf/pocket_conf
 ```
 sudo app/pocket_dump/pocket_dump /tmp/fifo1in /dev/null
 ```
-4. launch GNU Radio frequency transposition and FIFO to ZeroMQ Pub/Sub conversion
+4. launch GNU Radio frequency transposition and FIFO to ZeroMQ Pub conversion
 ```
 MAX2771_transpose.py
 ```
-5. launch ``gnss-sdr`` for GNSS signal processing
+5. launch ``gnss-sdr`` for GNSS ZeroMQ Sub acquisition and signal processing
 ```
 gnss-sdr -c ZMQ_GPS_1_grcomplex.conf
 ```
-6. collect result broadcast by ``gnss-sdr`` through UDP port 1234 and enjoy
+6. collect results broadcast by ``gnss-sdr`` through UDP port 1234 and enjoy
 ```
 python3 ./jmf.py > record
 ```
 7. analyze the result
 ```
-cut -d\  -f2,3 record | sed 's/dt=//g' | sed 's/TOW=//g' > dt
+cut -d\  -f2,3,7 record | sed 's/dt=//g' | sed 's/TOW=//g' | sed 's/df=//g' > dt
 ```
-and with GNU/Octave:
+and with GNU/Octave (summarized and expanded in ``process.m``):
 ```
-load dt
+dt=dlmread('dt');
 k=find(abs(dt(:,2))>2E-10);dt=dt(k,:);
 k=find(diff(dt(:,2))>10e-3);
 for l=1:length(k)
-  dt(k(l)+1:end,2)=dt(k(l)+1:end,2)-20e-3;
+  dt(k(l)+1:end,2)=dt(k(l)+1:end,2)-20e-3; % 20 ms jumps
 end
-subplot(211);plot((dt(:,1)-dt(1,1))/1000/3600,dt(:,2),'.')
+subplot(311);plot((dt(:,1)-dt(1,1))/1000/3600,dt(:,2),'.')
 [a,b]=polyfit((dt(:,1)-dt(1,1))/1000,dt(:,2),1);
 a(1)
 ylabel('local time-GPS time (s)');legend(num2str(a(1)))
 res=dt(:,2)-b.yf;
-subplot(212);plot((dt(:,1)-dt(1,1))/1000/3600,res,'.');
+subplot(312);plot((dt(:,1)-dt(1,1))/1000/3600,res,'.');
 xlabel('time (h)');ylabel('local time-GPS time (s)')
 y=[(dt(:,1)-dt(1,1))/1000 res];
+subplot(313);plot((dt(:,1)-dt(1,1))/1000/3600,dt(:,end),'.');
+xlabel('time (h)');ylabel('frequency offset (ppm)')
 save -ascii y y
 ```
 and using SigmaTheta:
@@ -90,3 +92,17 @@ Three hour continuous acquisition allowing for the display of the Allan deviatio
 $>24$ hour record with signal loss by gnss-sdr:
 
 <img src="record3.svg">
+
+### Closed loop estimate
+
+From the openloop measurement:
+1. the data were linearly interpolated to compensate for missing measurements (time offset smaller vers 0.1 ns or unlocked gnss-sdr)
+and filtered using an IIR with time constant of 200 s (minimum of the Allan deviation on a continuous measurement)
+2. the frequency offset was applied to the openloop measurements to correct for TCXO inaccuracy (openloop correction)
+3. a closed loop control was applied on the measured time delay to compensate for TCXO frequency offset and cancel the time delay
+
+<img src="fig1.png">
+
+<img src="fig2.png">
+
+<img src="fig3.png">
