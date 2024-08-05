@@ -101,10 +101,20 @@ and filtered using an IIR with time constant of 200 s (minimum of the Allan devi
 
 <img src="fig1.png" width=600>
 
+Top with frequency offset, middle after manually removing the frequency offset identified as linear fit of the time
+delay between local and GPS time (1-PPS), and bottom frequency offset (ppm) identified by ``gnss-sdr``
+
 2. the frequency offset was applied to the openloop measurements to correct for TCXO inaccuracy (openloop correction)
 
 <img src="fig2.png" width=600>
 
+Top interpolated data, before (red, blue) and after (yellow, purple) filtering with the IIR with 200 s time constant. Blue
+is 1-PPS time difference and red is frequency offset from ``gnss-sdr``, yellow is filtered 1-PPS time difference and
+purple is filtered frequency offset. Bottom: subtracting the cumsum(frequency offset) from 1-PPS time-delay (openloop correction)
+
 3. a closed loop control was applied on the measured time delay to compensate for TCXO frequency offset and cancel the time delay
 
 <img src="fig3.png" width=600>
+
+Using the filtered time offset observation to correct (PI control) the observed time delay between local clock and GPS 1-PPS,
+2nd from top applynig the correction to the raw data and third from top, applying the correction to the filtered data.
