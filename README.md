@@ -1,6 +1,6 @@
 ## MAX2771 multiband GNSS receiver for FX2LP
 
-### Objective: multi-MAX2771 GNSS receiver with up to 48 MS/s bulk USB communication
+### Objective: multi-MAX2771 GNSS receiver with up to 44 MS/s bulk USB communication
 
 ... for
 * multiband GNSS (or other L-band signal) acquisition and processing if a power combiner 
