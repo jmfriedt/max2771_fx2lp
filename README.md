@@ -45,8 +45,6 @@ cd fxload
 git submodule update --init
 cmake .
 make -j12
-sudo ./fxload/src/fxload load_eeprom --device 04b4:8613 --ihex-path ./FX2LP/complete_fw/build/complete_fw.ihx -t FX2LP --control-byte 0xC2 -s ./fxload/resources/Vend_Ax.hex
-
 ```
 
 3. Flash the firmware in the FX2LP development board: switch on the board with the jumper to the bottom left (with the USB port facing
