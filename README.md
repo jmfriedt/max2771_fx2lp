@@ -1,6 +1,6 @@
 ## MAX2771 multiband GNSS receiver for FX2LP
 
-### Objective: multi-MAX2771 GNSS receiver with up to 48 MS/s bulk USB communication
+### Objective: multi-MAX2771 GNSS receiver with up to 44 MS/s bulk USB communication
 
 ... for
 * multiband GNSS (or other L-band signal) acquisition and processing if a power combiner 
@@ -28,7 +28,7 @@ The firmware for the FX2LP is compiled using opensource tools including the
 ``sdcc`` compiler, ``fx2lib`` library, ``cycfx2prog`` for prototyping the 8051 embedded
 software and  ``fxload`` for flashing the onboard EEPROM.
 
-### Getting started
+### Getting started (assuming development on a GNU/Linux system)
 
 1. Compile the FX2LP 8051 firmware (assumes ``sdcc`` is installed):
 ```
@@ -38,15 +38,15 @@ cd ../complete_fw
 make
 ```
 must complete with ``build/complete_fw.ihx`` in ``FX2LP/complete_fw``
+
 2. Compile ``fxload`` for flashing the FX2LP
 ```
 cd fxload
 git submodule update --init
 cmake .
 make -j12
-sudo ./fxload/src/fxload load_eeprom --device 04b4:8613 --ihex-path ./FX2LP/complete_fw/build/complete_fw.ihx -t FX2LP --control-byte 0xC2 -s ./fxload/resources/Vend_Ax.hex
-
 ```
+
 3. Flash the firmware in the FX2LP development board: switch on the board with the jumper to the bottom left (with the USB port facing
 upward) closed in order to start the bootloader (``lsusb`` must return ``ID 04b4:8613 Cypress Semiconductor Corp. CY7C68013 EZ-USB FX2 
 USB 2.0 Development Kit``):
@@ -61,7 +61,8 @@ Done.
 ```
 
 In case a message stating ``WARNING: don't see a large enough EEPROM`` is displayed, then the first byte of the EEPROM must be erased. To do so,
-follow the sequences in
+follow the sequences in ``FX2LP/bulk_read_example`` and most significantly the section about *Erase EEPROM and flash program to EEPROM*
+
 4. Check the firmware has been flashed: switch off, remove the bottom-left jumper (to execute the firmware flashed in the EEPROM) and
 restart the FX2LP: ``lsusb`` must now indicate ``ID 04b4:1004 Cypress Semiconductor Corp. There``
 
