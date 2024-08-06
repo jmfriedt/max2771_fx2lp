@@ -61,7 +61,7 @@ Done.
 ```
 
 In case a message stating ``WARNING: don't see a large enough EEPROM`` is displayed, then the first byte of the EEPROM must be erased. To do so,
-follow the sequences in
+follow the sequences in ``FX2LP/bulk_read_example`` and most significantly the section about *Erase EEPROM and flash program to EEPROM*
 
 4. Check the firmware has been flashed: switch off, remove the bottom-left jumper (to execute the firmware flashed in the EEPROM) and
 restart the FX2LP: ``lsusb`` must now indicate ``ID 04b4:1004 Cypress Semiconductor Corp. There``
