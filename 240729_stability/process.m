@@ -103,5 +103,3 @@ ylim([0 2]);ylabel('tf (ns)')
 subplot(414)
 plot((dt(1:N,1)-dt(1,1))/3600/1000,fo*1e6,'.')
 ylim([-.47 -.35]);ylabel('df (ppm)');xlabel('time (h)')
-subplot(413)
-ylim([0 2e-9]);
