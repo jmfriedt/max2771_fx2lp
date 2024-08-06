@@ -1,3 +1,6 @@
 [submodule "FX2LP/fx2lib"]
 	path = FX2LP/fx2lib
 	url = https://github.com/djmuhlestein/fx2lib
+[submodule "fxload"]
+	path = fxload
+	url = https://github.com/mbed-ce/fxload

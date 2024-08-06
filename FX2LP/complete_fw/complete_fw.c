@@ -7,9 +7,18 @@
 #include <eputils.h>
 #include <i2c.h>
 
+// type defintions -------------------------------------------------------------
+typedef unsigned char uint8_t;
+typedef unsigned short uint16_t;
+typedef unsigned long uint32_t;
+typedef signed char int8_t;
+typedef short int16_t;
+typedef long int32_t;
+
 static void load_default(void);
 static void load_settings(void);
 static void save_settings(void);
+static void write_AD9851(uint32_t, uint8_t);
 
 #define SYNCDELAY SYNCDELAY4
 
@@ -28,6 +37,7 @@ void jmfdelay(int i)
 #define F_TCXO       24000      // TCXO frequency (kHz)
 #define CSN1         0          // EZ-USB FX2 PD0  -> MAX2771 CH1 CSN
 #define CSN2         1          // EZ-USB FX2 PD1  -> MAX2771 CH2 CSN
+#define CSNAD9851    7          // EZ-USB FX2 PA7  -> AD9851 FQ_UD
 #define SCLK         2          // EZ-USB FX2 PD2  -> MAX2771 SCLK
 #define SDATA        3          // EZ-USB FX2 PD3 <-> MAX2771 SDATA
 #define STAT1        4          // EZ-USB FX2 PD4 <-  MAX2771 CH1 LD
@@ -45,6 +55,7 @@ void jmfdelay(int i)
 #define VR_SAVE      0x47       // USB vendor request: Save settings to EEPROM
 #define VR_EE_READ   0x48       // USB vendor request: Read EEPROM
 #define VR_EE_WRITE  0x49       // USB vendor request: Write EEPROM
+#define VR_AD9851    0x50       // USB vendor request: Write AD9851
 
 #define MAX_CH       2          // number of MAX2771 channels
 #define MAX_ADDR     11         // number of MAX2771 registers
@@ -59,14 +70,6 @@ void jmfdelay(int i)
 #define BIT(port)    ((uint8_t)1<<(port))
 #define WORD_(bytes) (((uint16_t)(bytes)[1]<<8) + (bytes)[0])
 
-// type defintions -------------------------------------------------------------
-typedef unsigned char uint8_t;
-typedef unsigned short uint16_t;
-typedef unsigned long uint32_t;
-typedef signed char int8_t;
-typedef short int16_t;
-typedef long int32_t;
-
 // default MAX2771 register settings -------------------------------------------
 static uint32_t __xdata reg_default[][MAX_ADDR] = {
   {0xA2241797, 0x20550288, 0x0E9F21DC, 0x69888000, 0x00082008, 0x0647AE70,
@@ -76,7 +79,8 @@ static uint32_t __xdata reg_default[][MAX_ADDR] = {
 };
 volatile __bit got_sud;
 
-static void digitalWrite(uint8_t , uint8_t );
+static void digitalWriteD(uint8_t , uint8_t );
+static void digitalWriteA(uint8_t , uint8_t );
 
 // start bulk trasfer ----------------------------------------------------------
 static void start_bulk(void) {
@@ -111,9 +115,11 @@ void setup(void) {
   FIFORESET     = 0x86; SYNCDELAY; // EP6FIFO: RESET
   FIFORESET     = 0x00; SYNCDELAY;
   
-  digitalWrite(CSN1, 1);
-  digitalWrite(CSN2, 1);
-  digitalWrite(SCLK, 0);
+  digitalWriteD(CSN1, 1);
+  digitalWriteD(CSN2, 1);
+  digitalWriteA(CSNAD9851, 0); // low rest state, rise to transfer
+  digitalWriteD(SCLK, 0);
+  write_AD9851(0x28F5C28F, 0x01);
 
 //  EZUSB_InitI2C();  // JMF
   load_default();
@@ -152,16 +158,22 @@ static uint8_t digitalRead(uint8_t port) {
 }
 
 // write port D bit ------------------------------------------------------------
-static void digitalWrite(uint8_t port, uint8_t dat) {
+static void digitalWriteD(uint8_t port, uint8_t dat) {
   OED |= BIT(port);
   if (dat) IOD |= BIT(port); else IOD &= ~BIT(port);
 }
 
+// write port A bit ------------------------------------------------------------
+static void digitalWriteA(uint8_t port, uint8_t dat) {
+  OEA |= BIT(port);
+  if (dat) IOA |= BIT(port); else IOA &= ~BIT(port);
+}
+
 // write SPI SCLK --------------------------------------------------------------
 static void write_sclk(void) {
-  digitalWrite(SCLK, 1);
+  digitalWriteD(SCLK, 1);
   jmfdelay(SCLK_CYC);
-  digitalWrite(SCLK, 0);
+  digitalWriteD(SCLK, 0);
   jmfdelay(SCLK_CYC);
 }
 
@@ -171,7 +183,7 @@ BOOL handle_get_descriptor(void) {
 
 // write SPI SDATA -------------------------------------------------------------
 static void write_sdata(uint8_t dat) {
-  digitalWrite(SDATA, dat);
+  digitalWriteD(SDATA, dat);
   write_sclk();
 }
 
@@ -197,17 +209,36 @@ static void write_head(uint16_t addr, uint8_t mode) {
   jmfdelay(SCLK_CYC);
 }
 
+// AD9851 is rising edge, LSB first, 5 bytes with 4 byte frequency (LSB to MSB) and 1 byte
+// with {6xREFCLK=1, 0, 0, phase=00000}, ends with pulse on FQ_UD
+static void write_AD9851(uint32_t freq, uint8_t ctrl) {
+  int8_t i;
+  jmfdelay(SCLK_CYC);
+  digitalWriteA(CSNAD9851, 1);    // FQ_UD pulse
+  jmfdelay(SCLK_CYC);
+  digitalWriteA(CSNAD9851, 0);
+  jmfdelay(SCLK_CYC);
+  for (i = 0; i < 32; i++)        // AD9851 is LSB first
+     write_sdata((uint8_t)(freq >> i) & 1);
+  for (i = 0; i < 8; i++) 
+     write_sdata((uint8_t)(ctrl >> i) & 1);
+  jmfdelay(SCLK_CYC);
+  digitalWriteA(CSNAD9851, 1);    // FQ_UD pulse
+  jmfdelay(SCLK_CYC);
+  digitalWriteA(CSNAD9851, 0);
+}
+
 // write MAX2771 register ------------------------------------------------------
 static void write_reg(uint8_t cs, uint8_t addr, uint32_t val) {
   int8_t i;
   
-  digitalWrite(cs, 0);
+  digitalWriteD(cs, 0);
   write_head(addr, 0);
   
-  for (i = 31; i >= 0; i--) {
+  for (i = 31; i >= 0; i--) {     // MAX2771 is MSB first
     write_sdata((uint8_t)(val >> i) & 1);
   }
-  digitalWrite(cs, 1);
+  digitalWriteD(cs, 1);
 }
 
 // read MAX2771 register -------------------------------------------------------
@@ -215,14 +246,14 @@ static uint32_t read_reg(uint8_t cs, uint8_t addr) {
   uint32_t val = 0;
   int8_t i;
   
-  digitalWrite(cs, 0);
+  digitalWriteD(cs, 0);
   write_head(addr, 1);
   
   for (i = 31; i >= 0; i--) {
     val <<= 1;
     val |= read_sdata();
   }
-  digitalWrite(cs, 1);
+  digitalWriteD(cs, 1);
   return val;
 }
 
@@ -230,6 +261,7 @@ BOOL handle_vendorcommand(BYTE cmd) {
  uint16_t len = WORD_(SETUPDAT + 6);
  uint16_t val = WORD_(SETUPDAT + 2);
  uint32_t val32;
+ uint8_t ctrl;
  switch ( cmd ) {
   case VR_STAT:
   {
@@ -307,6 +339,18 @@ BOOL handle_vendorcommand(BYTE cmd) {
     eeprom_write(I2C_ADDR, val, (uint8_t)len, EP0BUF);
   }
 #endif
+  case VR_AD9851: 
+  {
+    if (len < 5) return TRUE;
+    EP0BCH = EP0BCL = 0;
+    while (EP0CS & bmEPBUSY) ;
+    val32=*(uint32_t *)EP0BUF;  // freq
+    val32=bswap32(val32);
+    ctrl=EP0BUF[4];
+    write_AD9851(val32, ctrl);
+    return TRUE;
+    break;
+  }
   default:
  }
  return FALSE;

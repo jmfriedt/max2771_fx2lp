@@ -4,13 +4,12 @@
 pkg load signal
 ifreq=2e6;
 fs=8e6;
+filename='ch1_20240706_193119genuine.bin';seuil=2.6
+% filename="ch1_20240706_061654_spoof.bin";seuil=7
 
-
-% f=fopen("ch1.bin")
-% f=fopen("ch1_20240706_061654.bin");
-f=fopen("ch1_20240706_193119genuine.bin");
-d=fread(f,1e6,'int8'); d=d-mean(d);
-d=fread(f,1e6,'int8'); d=d-mean(d);
+f=fopen(filename);
+d=fread(f,1e6,'int8'); d=fread(f,1e6,'int8');
+d=fread(f,1e6,'int8'); d=fread(f,1e6,'int8');
 d=fread(f,1e6,'int8'); d=d-mean(d);
 t=[0:length(d)-1]'/fs;
 lo=exp(j*2*pi*t*ifreq);
@@ -29,11 +28,8 @@ fclose(f)
 ylabel('|FFT(sig1^2)| (a.u.)')
 
 hold on
-% f=fopen("ch2.bin")
-% f=fopen("ch2_20240706_061654.bin");
-f=fopen("ch2_20240706_193119genuine.bin");
-d=fread(f,1e6,'int8'); d=d-mean(d);
-d=fread(f,1e6,'int8'); d=d-mean(d);
+f=fopen(strrep(filename,"ch1","ch2")); % second channel
+d=fread(f,1e6,'int8'); d=fread(f,1e6,'int8');
 d=fread(f,1e6,'int8'); d=d-mean(d);
 t=[0:length(d)-1]'/fs;
 lo=exp(j*2*pi*t*ifreq);
@@ -45,7 +41,7 @@ res2=fftshift(fft(d2))(kindex);
 plot(kfreq,abs(res2))
 fclose(f)
 
-k=find(abs(res2)>mean(abs(res2(1:10)))*3)
+k=find(abs(res2)>mean(abs(res2(1:10)))*seuil)
 hold on
 plot(kfreq(k),20000,'rx')
 ylabel('|FFT(sig2^2)| (a.u.)')
@@ -53,8 +49,9 @@ ylabel('|FFT(sig2^2)| (a.u.)')
 subplot(313)
 res=angle(res2(k))-angle(res1(k));
 kres=find(res>2);res(kres)=res(kres)-pi*2;
+kres=find(res<-4);res(kres)=res(kres)+pi*2;
 plot(kfreq(k),res,'x');
 xlim([-.1 .1])
-% ylim([-4 2])
+ylim([-4 2])
 xlabel('2xFourier frequency (Hz)')
 ylabel('phase difference (rad)')

@@ -1,18 +1,8 @@
-AS = sdas8051
+MAIN = mainPA
+# MAIN = mainPD
+
 CC = sdcc
-LD = sdcc
-
-SDCCLIB = SDCClib
-OBJCOPY = objcopy
-
-MAIN = main
 FX2LIB = ../fx2lib
-
-SRCS := $(wildcard *.c)
-SRCS += $(wildcard $(FX2LIB)/lib/*.c)
-SRCS := $(filter-out $(FX2LIB)/lib/setupdat.c,$(SRCS))
-SRCS += $(wildcard $(FX2LIB)/lib/interrupts/*.c)
-OBJS = $(SRCS:.c=.rel)
 
 CFLAGS += -mmcs51
 CFLAGS += -I$(FX2LIB)/include
@@ -21,20 +11,15 @@ LDFLAGS += -mmcs51
 LDFLAGS += --code-size 0x1c00
 LDFLAGS += --xram-size 0x0200
 LDFLAGS += --xram-loc 0x1c00
+LDFLAGS += -L$(FX2LIB)/lib
 
-all: $(MAIN).hex
+all: $(MAIN).ihx
 
-%.rel: %.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+$(MAIN).ihx: $(MAIN).c
+	$(CC) $(CFLAGS) $(LDFLAGS) $^ fx2.lib
 
-%.elf: $(OBJS)
-	$(LD) $(LDFLAGS) $^ -o $@
-
-%.hex: %.elf
-	$(OBJCOPY) $< -Oihex $@
-
-flash: $(MAIN).hex
-	sudo cycfx2prog prg:$(MAIN).hex run
+flash: $(MAIN).ihx
+	sudo cycfx2prog prg:$(MAIN).ihx run
 
 clean:
-	rm -f $(MAIN).asm $(MAIN).lst $(MAIN).rst $(MAIN).sym $(MAIN).lk $(MAIN).elf $(MAIN).hex $(MAIN).map $(MAIN).mem $(MAIN).lk $(OBJS)
+	rm -f $(MAIN).rel $(MAIN).asm $(MAIN).lst $(MAIN).rst $(MAIN).sym $(MAIN).lk $(MAIN).ihx $(MAIN).map $(MAIN).mem $(MAIN).lk

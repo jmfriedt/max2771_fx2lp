@@ -17,6 +17,7 @@ for l=1:length(k)
 end
 % plot with drift
 subplot(311);plot((dt(:,1)-dt(1,1))/1000/3600,dt(:,2),'.')
+save -ascii dt_line19.txt dt
 % remove drift
 [a,b]=polyfit((dt(:,1)-dt(1,1))/1000,dt(:,2),1);
 a(1)

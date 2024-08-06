@@ -17,3 +17,8 @@ tests
 USB bus and reading/writing MAX2771 registers through bitbanged SPI
 * ``complete_fw`` includes bitbanged SPI and USB Bulk endpoint communication, final
 firmware with all core functionalities.
+
+When git cloning the repository, ``fx2lib`` is an external submodule dependency,
+so the easiest is to ``git clone --recursive``. Before compiling the examples, go to
+``fx2lib`` and ``make`` to compile ``lib/fx2.lib`` to be linked with the programs
+we develop for the FX2LP 8051 microcontroller.

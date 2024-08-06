@@ -34,7 +34,7 @@ and switch off and back on for executing the program.
 
 A host program to read bulk data from End Point 6 of FX2LP:
 reads 512 bytes from the device, originally by Siddharth Deore 
-(siddharthdeore@gmail.com.
+(siddharthdeore@gmail.com).
 
 Compiling the host application and executing on GNU/Linux:
 ```
