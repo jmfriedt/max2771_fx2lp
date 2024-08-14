@@ -98,6 +98,7 @@ static void stop_bulk(void) {
 
 // SETUP routine ---------------------------------------------------------------
 void setup(void) {
+  uint32_t freq = 0x28F5C28F;
   CPUCS         = 0x12; SYNCDELAY; // CPU: CLKSPD=48MHz, CLKOE=FLOAT
   EP2FIFOCFG    = 0x00; SYNCDELAY; // EPxFIFO: WORDWIDE=BYTE (PD enabled)
   EP4FIFOCFG    = 0x00; SYNCDELAY;
@@ -119,13 +120,15 @@ void setup(void) {
   digitalWriteD(CSN2, 1);
   digitalWriteA(CSNAD9851, 0); // low rest state, rise to transfer
   digitalWriteD(SCLK, 0);
-  write_AD9851(0x28F5C28F, 0x01);
+//  freq=bswap32(freq);
+  write_AD9851(freq, 0x01);
 
 //  EZUSB_InitI2C();  // JMF
   load_default();
   load_settings();  // JMF
 
   jmfdelay(255);
+  write_AD9851(freq, 0x01);
   start_bulk();
 }
 
@@ -214,7 +217,7 @@ static void write_head(uint16_t addr, uint8_t mode) {
 static void write_AD9851(uint32_t freq, uint8_t ctrl) {
   int8_t i;
   jmfdelay(SCLK_CYC);
-  digitalWriteA(CSNAD9851, 1);    // FQ_UD pulse
+  digitalWriteA(CSNAD9851, 1);    // FQ_UD pulse to reset SPI bus
   jmfdelay(SCLK_CYC);
   digitalWriteA(CSNAD9851, 0);
   jmfdelay(SCLK_CYC);
