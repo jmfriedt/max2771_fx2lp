@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+<Folder>
+	<Style id="hl2">
+		<IconStyle>
+			<scale>4.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle_highlight.png</href>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="default2">
+		<IconStyle>
+			<scale>4.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<StyleMap id="default1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#hl2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#default2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="hl">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle_highlight.png</href>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="default">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<StyleMap id="default0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#default</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="defaultStyles">
+		<PolyStyle>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+<Placemark>
+<name>S002</name>
+<description>Satellite 002 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:29:13Z</when>
+<when>2024-08-07T14:31:04Z</when>
+<gx:coord>-003.99 +61.12 793000</gx:coord>
+<gx:coord>-002.25 +45.68 795000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S003</name>
+<description>Satellite 003 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:11:03Z</when>
+<when>2024-08-07T14:11:29Z</when>
+<when>2024-08-07T14:12:59Z</when>
+<gx:coord>+008.96 +48.64 796000</gx:coord>
+<gx:coord>+009.22 +45.13 796000</gx:coord>
+<gx:coord>+009.66 +32.82 795000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S004</name>
+<description>Satellite 004 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:03:18Z</when>
+<when>2024-08-07T15:03:54Z</when>
+<when>2024-08-07T15:04:19Z</when>
+<when>2024-08-07T15:04:25Z</when>
+<when>2024-08-07T15:05:05Z</when>
+<gx:coord>+008.89 +56.37 793000</gx:coord>
+<gx:coord>+009.45 +51.17 792000</gx:coord>
+<gx:coord>+009.74 +47.60 795000</gx:coord>
+<gx:coord>+009.84 +46.56 795000</gx:coord>
+<gx:coord>+010.09 +41.35 794000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:43:37Z</when>
+<when>2024-08-07T15:43:59Z</when>
+<gx:coord>-016.68 +58.76 793000</gx:coord>
+<gx:coord>-016.22 +55.74 793000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S005</name>
+<description>Satellite 005 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:56:57Z</when>
+<when>2024-08-07T15:57:01Z</when>
+<gx:coord>+009.66 +60.64 795000</gx:coord>
+<gx:coord>+009.81 +61.14 792000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T16:37:36Z</when>
+<when>2024-08-07T16:37:51Z</when>
+<when>2024-08-07T16:37:56Z</when>
+<gx:coord>-017.58 +36.33 795000</gx:coord>
+<gx:coord>-017.53 +38.39 794000</gx:coord>
+<gx:coord>-017.48 +39.24 797000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S006</name>
+<description>Satellite 006 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:52:13Z</when>
+<gx:coord>+010.91 +53.34 795000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T16:33:11Z</when>
+<when>2024-08-07T16:33:46Z</when>
+<when>2024-08-07T16:34:40Z</when>
+<when>2024-08-07T16:34:49Z</when>
+<when>2024-08-07T16:35:14Z</when>
+<when>2024-08-07T16:36:12Z</when>
+<gx:coord>-015.36 +33.27 798000</gx:coord>
+<gx:coord>-015.25 +37.92 797000</gx:coord>
+<gx:coord>-014.95 +45.19 794000</gx:coord>
+<gx:coord>-014.86 +46.24 795000</gx:coord>
+<gx:coord>-014.61 +49.83 796000</gx:coord>
+<gx:coord>-013.76 +57.58 795000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S007</name>
+<description>Satellite 007 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:34:19Z</when>
+<gx:coord>+028.46 +35.95 799000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:15:08Z</when>
+<when>2024-08-07T15:15:08Z</when>
+<when>2024-08-07T15:15:14Z</when>
+<when>2024-08-07T15:15:26Z</when>
+<when>2024-08-07T15:15:52Z</when>
+<when>2024-08-07T15:16:17Z</when>
+<gx:coord>+002.18 +53.91 793000</gx:coord>
+<gx:coord>+002.17 +53.84 794000</gx:coord>
+<gx:coord>+002.29 +52.94 792000</gx:coord>
+<gx:coord>+002.46 +51.24 795000</gx:coord>
+<gx:coord>+002.71 +47.60 795000</gx:coord>
+<gx:coord>+002.97 +43.67 793000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:56:40Z</when>
+<when>2024-08-07T15:56:51Z</when>
+<when>2024-08-07T15:57:02Z</when>
+<gx:coord>-022.39 +46.03 798000</gx:coord>
+<gx:coord>-022.30 +44.47 793000</gx:coord>
+<gx:coord>-022.22 +42.93 797000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S008</name>
+<description>Satellite 008 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T16:13:47Z</when>
+<when>2024-08-07T16:15:30Z</when>
+<when>2024-08-07T16:15:42Z</when>
+<gx:coord>-003.81 +36.01 796000</gx:coord>
+<gx:coord>-003.07 +50.34 794000</gx:coord>
+<gx:coord>-002.92 +51.99 793000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S009</name>
+<description>Satellite 009 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:19:04Z</when>
+<when>2024-08-07T15:19:05Z</when>
+<when>2024-08-07T15:19:46Z</when>
+<when>2024-08-07T15:19:47Z</when>
+<when>2024-08-07T15:20:20Z</when>
+<gx:coord>+000.05 +52.71 794000</gx:coord>
+<gx:coord>+000.11 +52.62 793000</gx:coord>
+<gx:coord>+000.68 +44.95 795000</gx:coord>
+<gx:coord>+000.68 +44.77 795000</gx:coord>
+<gx:coord>+000.94 +38.62 797000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T16:00:49Z</when>
+<when>2024-08-07T16:01:01Z</when>
+<gx:coord>-024.50 +44.24 793000</gx:coord>
+<gx:coord>-024.42 +42.70 793000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S013</name>
+<description>Satellite 013 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:25:34Z</when>
+<when>2024-08-07T14:26:00Z</when>
+<when>2024-08-07T14:26:13Z</when>
+<when>2024-08-07T14:26:17Z</when>
+<when>2024-08-07T14:26:30Z</when>
+<when>2024-08-07T14:26:41Z</when>
+<when>2024-08-07T14:26:55Z</when>
+<when>2024-08-07T14:27:29Z</when>
+<when>2024-08-07T14:27:44Z</when>
+<gx:coord>-001.45 +59.52 792000</gx:coord>
+<gx:coord>-000.85 +55.76 796000</gx:coord>
+<gx:coord>-000.65 +53.85 792000</gx:coord>
+<gx:coord>-000.59 +53.30 793000</gx:coord>
+<gx:coord>-000.36 +51.29 795000</gx:coord>
+<gx:coord>-000.25 +49.63 795000</gx:coord>
+<gx:coord>-000.10 +47.65 794000</gx:coord>
+<gx:coord>+000.18 +42.91 794000</gx:coord>
+<gx:coord>+000.30 +40.80 794000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S016</name>
+<description>Satellite 016 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:21:18Z</when>
+<when>2024-08-07T15:21:22Z</when>
+<when>2024-08-07T15:22:54Z</when>
+<gx:coord>-003.84 +62.65 791000</gx:coord>
+<gx:coord>-003.70 +62.05 794000</gx:coord>
+<gx:coord>-001.88 +48.25 797000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S017</name>
+<description>Satellite 017 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:48:07Z</when>
+<when>2024-08-07T14:48:53Z</when>
+<when>2024-08-07T14:49:04Z</when>
+<when>2024-08-07T14:51:02Z</when>
+<gx:coord>+018.42 +51.45 795000</gx:coord>
+<gx:coord>+018.90 +45.18 794000</gx:coord>
+<gx:coord>+018.98 +43.75 794000</gx:coord>
+<gx:coord>+019.41 +27.17 800000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:28:25Z</when>
+<when>2024-08-07T15:29:07Z</when>
+<when>2024-08-07T15:29:57Z</when>
+<when>2024-08-07T15:29:58Z</when>
+<gx:coord>-007.89 +59.94 794000</gx:coord>
+<gx:coord>-007.04 +54.27 794000</gx:coord>
+<gx:coord>-006.49 +47.68 796000</gx:coord>
+<gx:coord>-006.47 +47.55 795000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S018</name>
+<description>Satellite 018 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:43:11Z</when>
+<when>2024-08-07T14:43:22Z</when>
+<gx:coord>-008.95 +42.23 798000</gx:coord>
+<gx:coord>-008.91 +40.66 796000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S022</name>
+<description>Satellite 022 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:11:26Z</when>
+<when>2024-08-07T15:11:26Z</when>
+<when>2024-08-07T15:12:03Z</when>
+<when>2024-08-07T15:12:24Z</when>
+<when>2024-08-07T15:12:49Z</when>
+<when>2024-08-07T15:13:15Z</when>
+<when>2024-08-07T15:13:17Z</when>
+<gx:coord>+004.50 +53.73 794000</gx:coord>
+<gx:coord>+004.49 +53.64 792000</gx:coord>
+<gx:coord>+004.99 +48.07 795000</gx:coord>
+<gx:coord>+005.21 +44.86 795000</gx:coord>
+<gx:coord>+005.38 +41.21 796000</gx:coord>
+<gx:coord>+005.49 +37.31 798000</gx:coord>
+<gx:coord>+005.51 +37.08 797000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S023</name>
+<description>Satellite 023 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:13:19Z</when>
+<when>2024-08-07T14:13:30Z</when>
+<when>2024-08-07T14:14:22Z</when>
+<when>2024-08-07T14:14:26Z</when>
+<when>2024-08-07T14:14:30Z</when>
+<when>2024-08-07T14:14:31Z</when>
+<when>2024-08-07T14:15:34Z</when>
+<when>2024-08-07T14:15:37Z</when>
+<when>2024-08-07T14:15:41Z</when>
+<when>2024-08-07T14:15:52Z</when>
+<when>2024-08-07T14:16:01Z</when>
+<when>2024-08-07T14:16:04Z</when>
+<when>2024-08-07T14:16:04Z</when>
+<gx:coord>+004.84 +62.76 793000</gx:coord>
+<gx:coord>+005.14 +61.26 793000</gx:coord>
+<gx:coord>+006.24 +54.05 794000</gx:coord>
+<gx:coord>+006.29 +53.64 792000</gx:coord>
+<gx:coord>+006.37 +53.13 795000</gx:coord>
+<gx:coord>+006.36 +53.04 793000</gx:coord>
+<gx:coord>+007.00 +44.31 797000</gx:coord>
+<gx:coord>+007.03 +43.78 796000</gx:coord>
+<gx:coord>+007.07 +43.35 795000</gx:coord>
+<gx:coord>+007.15 +41.73 796000</gx:coord>
+<gx:coord>+007.20 +40.67 794000</gx:coord>
+<gx:coord>+007.19 +40.15 797000</gx:coord>
+<gx:coord>+007.23 +40.12 795000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S025</name>
+<description>Satellite 025 track</description>
+<gx:MultiTrack>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S026</name>
+<description>Satellite 026 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:54:50Z</when>
+<when>2024-08-07T14:56:43Z</when>
+<gx:coord>+012.69 +61.05 794000</gx:coord>
+<gx:coord>+014.41 +45.67 796000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:37:53Z</when>
+<when>2024-08-07T15:37:57Z</when>
+<gx:coord>-010.81 +45.47 793000</gx:coord>
+<gx:coord>-010.73 +44.86 795000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S028</name>
+<description>Satellite 028 track</description>
+<gx:MultiTrack>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S030</name>
+<description>Satellite 030 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T16:21:21Z</when>
+<when>2024-08-07T16:22:21Z</when>
+<when>2024-08-07T16:23:28Z</when>
+<when>2024-08-07T16:23:55Z</when>
+<when>2024-08-07T16:23:59Z</when>
+<when>2024-08-07T16:24:09Z</when>
+<gx:coord>-008.50 +34.03 799000</gx:coord>
+<gx:coord>-008.22 +42.33 796000</gx:coord>
+<gx:coord>-007.61 +51.91 795000</gx:coord>
+<gx:coord>-007.18 +55.67 794000</gx:coord>
+<gx:coord>-007.10 +56.19 794000</gx:coord>
+<gx:coord>-006.90 +57.64 795000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S036</name>
+<description>Satellite 036 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T13:59:47Z</when>
+<when>2024-08-07T13:59:53Z</when>
+<when>2024-08-07T14:01:02Z</when>
+<when>2024-08-07T14:01:06Z</when>
+<when>2024-08-07T14:01:20Z</when>
+<when>2024-08-07T14:01:35Z</when>
+<gx:coord>-017.76 +58.47 792000</gx:coord>
+<gx:coord>-017.61 +57.43 793000</gx:coord>
+<gx:coord>-016.61 +47.69 795000</gx:coord>
+<gx:coord>-016.59 +47.16 796000</gx:coord>
+<gx:coord>-016.44 +45.12 796000</gx:coord>
+<gx:coord>-016.37 +43.08 796000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S039</name>
+<description>Satellite 039 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T16:02:59Z</when>
+<when>2024-08-07T16:03:24Z</when>
+<when>2024-08-07T16:03:27Z</when>
+<when>2024-08-07T16:03:58Z</when>
+<gx:coord>+003.40 +44.90 795000</gx:coord>
+<gx:coord>+003.64 +48.60 796000</gx:coord>
+<gx:coord>+003.67 +49.10 794000</gx:coord>
+<gx:coord>+004.07 +53.20 793000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T16:46:00Z</when>
+<gx:coord>-022.06 +38.99 797000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S040</name>
+<description>Satellite 040 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T16:10:54Z</when>
+<when>2024-08-07T16:11:07Z</when>
+<when>2024-08-07T16:11:11Z</when>
+<when>2024-08-07T16:11:30Z</when>
+<when>2024-08-07T16:11:33Z</when>
+<when>2024-08-07T16:11:34Z</when>
+<when>2024-08-07T16:11:48Z</when>
+<gx:coord>-001.13 +45.04 795000</gx:coord>
+<gx:coord>-001.04 +47.08 794000</gx:coord>
+<gx:coord>-001.00 +47.56 794000</gx:coord>
+<gx:coord>-000.80 +50.15 793000</gx:coord>
+<gx:coord>-000.76 +50.61 792000</gx:coord>
+<gx:coord>-000.76 +50.67 796000</gx:coord>
+<gx:coord>-000.53 +52.66 794000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S043</name>
+<description>Satellite 043 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:57:49Z</when>
+<when>2024-08-07T15:58:07Z</when>
+<gx:coord>+005.42 +35.22 796000</gx:coord>
+<gx:coord>+005.48 +37.81 796000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S044</name>
+<description>Satellite 044 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:04:57Z</when>
+<when>2024-08-07T14:05:23Z</when>
+<gx:coord>-018.99 +47.92 796000</gx:coord>
+<gx:coord>-018.75 +44.32 795000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S046</name>
+<description>Satellite 046 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:37:32Z</when>
+<gx:coord>-007.95 +56.89 794000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S049</name>
+<description>Satellite 049 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:07:29Z</when>
+<gx:coord>+011.48 +44.90 796000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:49:12Z</when>
+<gx:coord>-014.92 +57.54 794000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S057</name>
+<description>Satellite 057 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T13:55:49Z</when>
+<when>2024-08-07T13:56:28Z</when>
+<when>2024-08-07T13:57:35Z</when>
+<when>2024-08-07T13:57:43Z</when>
+<when>2024-08-07T13:57:47Z</when>
+<when>2024-08-07T13:57:51Z</when>
+<gx:coord>-015.32 +57.74 792000</gx:coord>
+<gx:coord>-014.69 +52.49 795000</gx:coord>
+<gx:coord>-014.03 +43.37 797000</gx:coord>
+<gx:coord>-013.95 +42.26 795000</gx:coord>
+<gx:coord>-013.94 +41.82 795000</gx:coord>
+<gx:coord>-013.90 +41.23 794000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S069</name>
+<description>Satellite 069 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T13:47:29Z</when>
+<when>2024-08-07T13:47:44Z</when>
+<when>2024-08-07T13:47:51Z</when>
+<when>2024-08-07T13:48:07Z</when>
+<when>2024-08-07T13:48:20Z</when>
+<when>2024-08-07T13:48:28Z</when>
+<when>2024-08-07T13:48:42Z</when>
+<when>2024-08-07T13:49:19Z</when>
+<when>2024-08-07T13:49:27Z</when>
+<gx:coord>-010.77 +58.21 793000</gx:coord>
+<gx:coord>-010.47 +56.14 793000</gx:coord>
+<gx:coord>-010.35 +55.25 792000</gx:coord>
+<gx:coord>-010.13 +53.27 792000</gx:coord>
+<gx:coord>-009.95 +51.57 793000</gx:coord>
+<gx:coord>-009.83 +50.50 793000</gx:coord>
+<gx:coord>-009.71 +48.43 793000</gx:coord>
+<gx:coord>-009.39 +43.36 793000</gx:coord>
+<gx:coord>-009.32 +42.34 795000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S074</name>
+<description>Satellite 074 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T16:17:22Z</when>
+<when>2024-08-07T16:17:52Z</when>
+<when>2024-08-07T16:19:22Z</when>
+<when>2024-08-07T16:19:52Z</when>
+<when>2024-08-07T16:20:03Z</when>
+<gx:coord>-006.21 +33.65 798000</gx:coord>
+<gx:coord>-006.10 +37.84 797000</gx:coord>
+<gx:coord>-005.41 +50.13 795000</gx:coord>
+<gx:coord>-005.00 +54.27 795000</gx:coord>
+<gx:coord>-004.85 +55.80 793000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S077</name>
+<description>Satellite 077 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T16:06:31Z</when>
+<when>2024-08-07T16:06:46Z</when>
+<when>2024-08-07T16:06:47Z</when>
+<when>2024-08-07T16:07:02Z</when>
+<when>2024-08-07T16:07:17Z</when>
+<when>2024-08-07T16:07:20Z</when>
+<when>2024-08-07T16:07:24Z</when>
+<when>2024-08-07T16:07:46Z</when>
+<when>2024-08-07T16:07:48Z</when>
+<gx:coord>+000.99 +41.69 796000</gx:coord>
+<gx:coord>+001.06 +43.59 798000</gx:coord>
+<gx:coord>+001.07 +43.75 794000</gx:coord>
+<gx:coord>+001.19 +45.72 796000</gx:coord>
+<gx:coord>+001.34 +47.87 796000</gx:coord>
+<gx:coord>+001.35 +48.30 796000</gx:coord>
+<gx:coord>+001.41 +48.85 795000</gx:coord>
+<gx:coord>+001.67 +51.99 793000</gx:coord>
+<gx:coord>+001.74 +52.44 794000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S078</name>
+<description>Satellite 078 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:09:50Z</when>
+<gx:coord>-020.92 +40.96 795000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S082</name>
+<description>Satellite 082 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:46:54Z</when>
+<when>2024-08-07T15:47:28Z</when>
+<gx:coord>+012.27 +40.00 794000</gx:coord>
+<gx:coord>+012.50 +44.29 793000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T16:30:13Z</when>
+<when>2024-08-07T16:30:22Z</when>
+<when>2024-08-07T16:30:26Z</when>
+<when>2024-08-07T16:31:23Z</when>
+<when>2024-08-07T16:32:09Z</when>
+<gx:coord>-012.84 +42.25 795000</gx:coord>
+<gx:coord>-012.77 +43.46 798000</gx:coord>
+<gx:coord>-012.75 +43.96 795000</gx:coord>
+<gx:coord>-012.24 +51.47 793000</gx:coord>
+<gx:coord>-011.47 +57.70 795000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S087</name>
+<description>Satellite 087 track</description>
+<gx:MultiTrack>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S088</name>
+<description>Satellite 088 track</description>
+<gx:MultiTrack>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S089</name>
+<description>Satellite 089 track</description>
+<gx:MultiTrack>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S094</name>
+<description>Satellite 094 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:21:28Z</when>
+<when>2024-08-07T14:22:33Z</when>
+<when>2024-08-07T14:22:48Z</when>
+<when>2024-08-07T14:22:54Z</when>
+<when>2024-08-07T14:23:17Z</when>
+<when>2024-08-07T14:23:24Z</when>
+<when>2024-08-07T14:23:46Z</when>
+<when>2024-08-07T14:24:00Z</when>
+<when>2024-08-07T14:24:07Z</when>
+<gx:coord>+000.66 +60.79 793000</gx:coord>
+<gx:coord>+001.87 +51.92 795000</gx:coord>
+<gx:coord>+002.09 +49.79 794000</gx:coord>
+<gx:coord>+002.15 +48.95 794000</gx:coord>
+<gx:coord>+002.34 +45.68 795000</gx:coord>
+<gx:coord>+002.44 +44.72 795000</gx:coord>
+<gx:coord>+002.57 +41.59 797000</gx:coord>
+<gx:coord>+002.66 +39.52 798000</gx:coord>
+<gx:coord>+002.67 +38.65 798000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S096</name>
+<description>Satellite 096 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:17:50Z</when>
+<when>2024-08-07T14:18:01Z</when>
+<when>2024-08-07T14:18:16Z</when>
+<when>2024-08-07T14:18:46Z</when>
+<when>2024-08-07T14:18:50Z</when>
+<when>2024-08-07T14:18:57Z</when>
+<when>2024-08-07T14:18:59Z</when>
+<when>2024-08-07T14:19:21Z</when>
+<when>2024-08-07T14:19:22Z</when>
+<when>2024-08-07T14:19:54Z</when>
+<when>2024-08-07T14:20:02Z</when>
+<when>2024-08-07T14:20:17Z</when>
+<gx:coord>+003.30 +58.37 795000</gx:coord>
+<gx:coord>+003.58 +56.83 794000</gx:coord>
+<gx:coord>+003.84 +54.76 795000</gx:coord>
+<gx:coord>+004.25 +50.67 796000</gx:coord>
+<gx:coord>+004.30 +50.12 796000</gx:coord>
+<gx:coord>+004.36 +49.07 797000</gx:coord>
+<gx:coord>+004.38 +48.76 794000</gx:coord>
+<gx:coord>+004.63 +45.54 795000</gx:coord>
+<gx:coord>+004.62 +45.45 795000</gx:coord>
+<gx:coord>+004.83 +40.83 796000</gx:coord>
+<gx:coord>+004.89 +39.83 796000</gx:coord>
+<gx:coord>+004.95 +37.77 796000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S099</name>
+<description>Satellite 099 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T13:52:24Z</when>
+<when>2024-08-07T13:53:32Z</when>
+<gx:coord>-012.37 +51.75 795000</gx:coord>
+<gx:coord>-011.72 +42.66 793000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S103</name>
+<description>Satellite 103 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:59:32Z</when>
+<when>2024-08-07T14:59:44Z</when>
+<when>2024-08-07T14:59:49Z</when>
+<when>2024-08-07T15:01:03Z</when>
+<gx:coord>+011.38 +54.65 795000</gx:coord>
+<gx:coord>+011.51 +53.11 791000</gx:coord>
+<gx:coord>+011.60 +52.45 794000</gx:coord>
+<gx:coord>+012.28 +42.16 796000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S104</name>
+<description>Satellite 104 track</description>
+<gx:MultiTrack>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S107</name>
+<description>Satellite 107 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T16:25:37Z</when>
+<when>2024-08-07T16:26:13Z</when>
+<when>2024-08-07T16:26:34Z</when>
+<when>2024-08-07T16:26:45Z</when>
+<gx:coord>-010.66 +37.33 795000</gx:coord>
+<gx:coord>-010.47 +42.12 796000</gx:coord>
+<gx:coord>-010.35 +45.03 796000</gx:coord>
+<gx:coord>-010.24 +46.67 794000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S110</name>
+<description>Satellite 110 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:50:11Z</when>
+<when>2024-08-07T14:50:15Z</when>
+<when>2024-08-07T14:50:55Z</when>
+<when>2024-08-07T14:51:35Z</when>
+<when>2024-08-07T14:51:53Z</when>
+<gx:coord>+013.42 +67.01 792000</gx:coord>
+<gx:coord>+013.55 +66.48 790000</gx:coord>
+<gx:coord>+014.98 +60.85 794000</gx:coord>
+<gx:coord>+015.89 +55.24 792000</gx:coord>
+<gx:coord>+016.19 +52.71 794000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:35:03Z</when>
+<gx:coord>-008.18 +38.13 796000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S112</name>
+<description>Satellite 112 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:42:37Z</when>
+<when>2024-08-07T14:46:38Z</when>
+<gx:coord>+018.67 +64.54 795000</gx:coord>
+<gx:coord>+021.77 +31.11 798000</gx:coord>
+</gx:Track>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:24:49Z</when>
+<when>2024-08-07T15:25:06Z</when>
+<when>2024-08-07T15:25:50Z</when>
+<gx:coord>-005.56 +60.23 792000</gx:coord>
+<gx:coord>-005.10 +57.67 793000</gx:coord>
+<gx:coord>-004.28 +50.37 796000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S114</name>
+<description>Satellite 114 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T15:07:21Z</when>
+<when>2024-08-07T15:07:50Z</when>
+<when>2024-08-07T15:08:28Z</when>
+<gx:coord>+006.77 +55.58 792000</gx:coord>
+<gx:coord>+007.18 +51.50 795000</gx:coord>
+<gx:coord>+007.61 +46.18 796000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+<Placemark>
+<name>S115</name>
+<description>Satellite 115 track</description>
+<gx:MultiTrack>
+<gx:Track>
+<altitudeMode>absolute</altitudeMode>
+<when>2024-08-07T14:12:52Z</when>
+<when>2024-08-07T14:13:26Z</when>
+<when>2024-08-07T14:14:25Z</when>
+<gx:coord>-023.58 +48.90 795000</gx:coord>
+<gx:coord>-023.26 +44.23 796000</gx:coord>
+<gx:coord>-022.96 +36.07 798000</gx:coord>
+</gx:Track>
+</gx:MultiTrack>
+</Placemark>
+</Folder>
+</kml>
