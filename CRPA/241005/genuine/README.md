@@ -17,3 +17,7 @@ phone running the Android GPRTest software:
 python3 ./python/pocket_acq.py ch1.bin -f 8 -fi 2 -sig L1CA -prn 1-32 -f 20000
 ```
 
+Experimental setup for recording the genuine signals: two GNSS antennas with full view of the sky
+are connected to the dual-MAX2771 board:
+
+<img src="IMG_20241005_115248_723.jpg" width=800>
