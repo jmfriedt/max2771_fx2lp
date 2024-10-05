@@ -7,3 +7,13 @@ direction of arrivals lead to a wide distribution of phases on the detected sign
 by codeless decoding of the BPSK modulated signal (GPS L1 C/A)
 
 <img src="crpa.svg">
+
+The PocketSDR analaysis matches nicely the information provided by the GNSS receiver on a mobile
+phone running the Android GPRTest software:
+
+<img src="2024-10-05-152952_2704x1050_scrot.png" width=800>
+
+```
+python3 ./python/pocket_acq.py ch1.bin -f 8 -fi 2 -sig L1CA -prn 1-32 -f 20000
+```
+
