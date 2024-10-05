@@ -4,7 +4,7 @@
  <desc>
 Creator: GL2PS 1.4.2, (C) 1999-2020 C. Geuzaine
 For: Octave
-CreationDate: Sat Oct  5 11:42:49 2024
+CreationDate: Sat Oct  5 14:38:53 2024
 </desc>
  <defs/>
  <polygon fill="#ffffff" points="0,0 396,0 396,297 0,297"/>
@@ -413,6 +413,49 @@ CreationDate: Sat Oct  5 11:42:49 2024
    <polyline fill="none" points="221.243,218.147 227.243,212.147" stroke="#0071bc" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
    <polyline fill="none" points="221.414,214.684 227.414,220.684" stroke="#0071bc" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
    <polyline fill="none" points="221.414,220.684 227.414,214.684" stroke="#0071bc" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+  </g>
+  <clipPath id="cp00396297">
+   <polygon points="0,297 396,297 396,0 0,0"/>
+  </clipPath>
+  <g clip-path="url(#cp00396297)">
+   <polygon fill="#ffffff" points="276.434,52.1495 350.332,52.1495 350.332,34.7763 276.434,34.7763" shape-rendering="crispEdges"/>
+   <polyline fill="none" points="276.434,52.1495 350.332,52.1495" stroke="#262626" stroke-dasharray="16,0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="276.434,34.7763 350.332,34.7763" stroke="#262626" stroke-dasharray="16,0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="276.434,52.1495 276.434,34.7763" stroke="#262626" stroke-dasharray="16,0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="350.332,52.1495 350.332,34.7763" stroke="#262626" stroke-dasharray="16,0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="280.671,43.4629 301.858,43.4629" stroke="#0071bc" stroke-linecap="butt" stroke-linejoin="round" stroke-width="0.5"/>
+   <g font-family="FreeSans" font-size="9" font-style="normal" font-weight="normal" transform="translate(306.095,47.4629) rotate(-0,-0,-4)" xml:space="preserve">
+    <text fill="rgb(0,0,0)" x="0 5 10 13 18 23 28 33 35 " y="-0">antenna 1</text>
+   </g>
+  </g>
+  <clipPath id="cp00396297">
+   <polygon points="0,297 396,297 396,0 0,0"/>
+  </clipPath>
+  <g clip-path="url(#cp00396297)">
+   <polygon fill="#ffffff" points="276.434,143.539 350.332,143.539 350.332,126.165 276.434,126.165" shape-rendering="crispEdges"/>
+   <polyline fill="none" points="276.434,143.539 350.332,143.539" stroke="#262626" stroke-dasharray="16,0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="276.434,126.165 350.332,126.165" stroke="#262626" stroke-dasharray="16,0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="276.434,143.539 276.434,126.165" stroke="#262626" stroke-dasharray="16,0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="350.332,143.539 350.332,126.165" stroke="#262626" stroke-dasharray="16,0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="280.671,134.852 301.858,134.852" stroke="#0071bc" stroke-linecap="butt" stroke-linejoin="round" stroke-width="0.5"/>
+   <g font-family="FreeSans" font-size="9" font-style="normal" font-weight="normal" transform="translate(306.095,138.852) rotate(-0,-0,-4)" xml:space="preserve">
+    <text fill="rgb(0,0,0)" x="0 5 10 13 18 23 28 33 35 " y="-0">antenna 2</text>
+   </g>
+  </g>
+  <clipPath id="cp00396297">
+   <polygon points="0,297 396,297 396,0 0,0"/>
+  </clipPath>
+  <g clip-path="url(#cp00396297)">
+   <polygon fill="#ffffff" points="217.434,236.029 350.332,236.029 350.332,217.554 217.434,217.554" shape-rendering="crispEdges"/>
+   <polyline fill="none" points="217.434,236.029 350.332,236.029" stroke="#262626" stroke-dasharray="16,0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="217.434,217.554 350.332,217.554" stroke="#262626" stroke-dasharray="16,0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="217.434,236.029 217.434,217.554" stroke="#262626" stroke-dasharray="16,0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="350.332,236.029 350.332,217.554" stroke="#262626" stroke-dasharray="16,0" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="229.264,223.792 235.264,229.792" stroke="#0071bc" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <polyline fill="none" points="229.264,229.792 235.264,223.792" stroke="#0071bc" stroke-linecap="square" stroke-linejoin="miter" stroke-width="0.5"/>
+   <g font-family="FreeSans" font-size="9" font-style="normal" font-weight="normal" transform="translate(247.095,231.792) rotate(-0,-0,-5)" xml:space="preserve">
+    <text fill="rgb(0,0,0)" x="0 5 10 15 19 24 27 32 37 40 45 48 51 56 61 66 70 75 78 83 88 91 96 " y="-2">phase(ant2)-phase(ant1)</text>
+   </g>
   </g>
  </g>
 </svg>

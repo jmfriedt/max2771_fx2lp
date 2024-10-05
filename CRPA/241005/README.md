@@ -1,3 +1,12 @@
+Various experiments with the dual-MAX2771 board for detecting spoofing by codeless decoding
+of the GNSS signals. The assumption is that a genuine constellation with satellites distributed
+over the celestial sphere with different direction of arrivals will exhibit different phase differences
+of the signals recorded by two antennas separated by half wavelength, while a spoofing source will
+exhibit signals with similar phases for all satellites assuming the signal is being broadcast by
+a single spoofing source.
+
+Experimental demonstration:
+```
 pluto-gps-sim$ sudo ./pluto-gps-sim  -e hour1790.23n  -A -65 -t 2023/06/28,12:00:00 -l 48.3621221,-4.8223307,100 -U usb:3.28.5
 Using static location mode.
 Gain: -65.0dB
@@ -14,7 +23,6 @@ PRN   Az    El     Range     Iono
 22  115.5  17.3  24099494.4  10.2
 27  131.6  32.3  22771574.0   7.2
 32   94.1  25.6  23356935.7   7.8
-
 
 max2771/PocketSDR$ sudo ./app/pocket_conf/pocket_conf conf/pocket_L1L1_8MHz.conf
 #  [CH1] F_LO = 1573.420 MHz, F_ADC =  8.000 MHz (I ), F_FILT =  2.0 MHz, BW_FILT =  2.5 MHz
@@ -58,6 +66,7 @@ SIG= L1CA, PRN=  30, COFF=  0.57888 ms, DOP= 17065 Hz, C/N0= 35.3 dB-Hz
 SIG= L1CA, PRN=  31, COFF=  0.27000 ms, DOP= -3489 Hz, C/N0= 36.1 dB-Hz
 SIG= L1CA, PRN=  32, COFF=  0.42037 ms, DOP=  2314 Hz, C/N0= 46.3 dB-Hz
 
-
 pluto-gps-sim$ sudo ./pluto-gps-sim  -e hour3270.19n  -A -65 -t  2019/11/23,09:00:00  -l 48.3621221,-4.8223307,100 -U usb:3.28.5
+```
+
 
