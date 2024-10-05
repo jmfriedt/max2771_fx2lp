@@ -57,7 +57,6 @@ which must reply with
 ```
 FX2:  config = 0x42, disconnected, I2C = 100 KHz
 Done.
-
 ```
 
 In case a message stating ``WARNING: don't see a large enough EEPROM`` is displayed, then the first byte of the EEPROM must be erased. To do so,
