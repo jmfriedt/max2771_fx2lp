@@ -336,12 +336,14 @@ BOOL handle_vendorcommand(BYTE cmd) {
     break;
   }
   case VR_EE_WRITE: 
-  { if (len > 64 || val < EE_ADDR_0 || val + len > EE_ADDR_1) {
-        return TRUE;
-    }
+  {// if (len > 64 || val < EE_ADDR_0 || val + len > EE_ADDR_1) {
+   //     return TRUE;
+   // }
     EP0BCH = EP0BCL = 0;
     while (EP0CS & bmEPBUSY) ;
     eeprom_write(I2C_ADDR, val, (uint8_t)len, EP0BUF);
+    return TRUE;
+    break;
   }
 #endif
   case VR_AD9851: 
