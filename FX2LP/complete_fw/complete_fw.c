@@ -7,7 +7,7 @@
 #include <eputils.h>
 #include <i2c.h>
 
-#define ENA_VR_EE // EEPROM read and write vendor requests
+#define ENA_VR_EE // enable EEPROM read and write vendor requests
 
 // type defintions -------------------------------------------------------------
 typedef unsigned char uint8_t;
@@ -46,7 +46,7 @@ void jmfdelay(int i)
 #define STAT2        5          // EZ-USB FX2 PD5 <-  MAX2771 CH2 LD
 #define LED1         6          // EZ-USB FX2 PD6  -> LED1
 #define LED2         7          // EZ-USB FX2 PD7  -> LED2
-#define SCLK_CYC     3          // SPI SCLK delay // JMF 5 ->0
+#define SCLK_CYC     3          // SPI SCLK delay // JMF 5 -> 3
 
 #define VR_STAT      0x40       // USB vendor request: Get device info and status
 #define VR_REG_READ  0x41       // USB vendor request: Read MAX2771 register
@@ -100,7 +100,7 @@ static void stop_bulk(void) {
 
 // SETUP routine ---------------------------------------------------------------
 void setup(void) {
-  uint32_t freq = 0x28F5C28F;
+  uint32_t freq = 0x28F5C28F;      // AD9851 24 MHz frequency output
   CPUCS         = 0x12; SYNCDELAY; // CPU: CLKSPD=48MHz, CLKOE=FLOAT
   EP2FIFOCFG    = 0x00; SYNCDELAY; // EPxFIFO: WORDWIDE=BYTE (PD enabled)
   EP4FIFOCFG    = 0x00; SYNCDELAY;
@@ -339,9 +339,12 @@ BOOL handle_vendorcommand(BYTE cmd) {
   {// if (len > 64 || val < EE_ADDR_0 || val + len > EE_ADDR_1) {
    //     return TRUE;
    // }
-    EP0BCH = EP0BCL = 0;
-    while (EP0CS & bmEPBUSY) ;
-    eeprom_write(I2C_ADDR, val, (uint8_t)len, EP0BUF);
+    if (len <= 64)
+      {
+       EP0BCH = EP0BCL = 0;
+       while (EP0CS & bmEPBUSY) ;
+       eeprom_write(I2C_ADDR, val, (uint8_t)len, EP0BUF);
+      }
     return TRUE;
     break;
   }
@@ -425,32 +428,6 @@ static void load_default(void) {
     }
   }
 }
-//////// end of complete fw, start PockerSDR src code
-/*
-// read EEPROM -----------------------------------------------------------------
-static void read_eeprom(uint16_t addr, uint8_t len, uint8_t xdata *buff) {
-  uint8_t xdata str[2];
-  
-  str[0] = MSB(addr);
-  str[1] = LSB(addr);
-  EZUSB_WriteI2C(I2C_ADDR, 2, str);
-  EZUSB_ReadI2C(I2C_ADDR, len, buff);
-}
-
-// write EEPROM ----------------------------------------------------------------
-static void write_eeprom(uint16_t addr, uint8_t len, const uint8_t xdata *buff) {
-  uint8_t xdata str[3];
-  uint8_t i;
-  
-  for (i = 0; i < len; i++, addr++) {
-    str[0] = MSB(addr);
-    str[1] = LSB(addr);
-    str[2] = buff[i];
-    EZUSB_WriteI2C(I2C_ADDR, 3, str);
-    EZUSB_WaitForEEPROMWrite(I2C_ADDR);
-  }
-}
-*/
 
 // load MAX2771 register settings from EEPROM ----------------------------------
 static void load_settings(void) {
