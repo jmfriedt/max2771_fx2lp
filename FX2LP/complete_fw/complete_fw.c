@@ -7,6 +7,8 @@
 #include <eputils.h>
 #include <i2c.h>
 
+#define ENA_VR_EE // EEPROM read and write vendor requests
+
 // type defintions -------------------------------------------------------------
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
