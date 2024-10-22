@@ -24,3 +24,5 @@ so the easiest is to ``git clone --recursive``. Before compiling the examples, g
 we develop for the FX2LP 8051 microcontroller.
 
 Useful resources for understanding the FX2LP internals: [Cypress CY7C68013A microcontroller](https://www.infineon.com/dgdl/Infineon-CY7C68013A_CY7C68014A_CY7C68015A_CY7C68016A_EZ-USB_FX2LP_USB_Microcontroller_High-Speed_USB_Peripheral_Controller-DataSheet-v31_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0ec9f7974252) and [EZ-USB FX2 Technical Reference Manual](https://www.keil.com/dd/docs/datashts/cypress/fx2_trm.pdf)
+
+<img src="pinout.png">
