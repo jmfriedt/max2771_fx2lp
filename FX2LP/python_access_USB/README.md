@@ -56,7 +56,7 @@ b'08f25970'          # read content of register 5: matches the previously writte
 b'08f25970'          # write new value in register 5
 ```
 
-### Repeating the sdcc opensource compiler and associated libraries
+### Repeating with the sdcc opensource compiler and associated libraries
 
 The ``vendor_cmd.c`` example aims at
 * providing the Vendor Request services and return information similar to thos of the PocketSDR
@@ -83,3 +83,11 @@ demonstrating proper generation of the GPIO signals and transactions over the US
 the firmware compiled using ``sdcc``.
 
 <img src="Screenshot_2024-07-10_1_181522.png">
+
+### Vendor Request data format
+
+``dev.ctrl_transfer(0x40 , 0x42, 0x55, 0, msg)`` means a Vendor Request in "write"
+direction (0x40, from host to device), sending vendor request 0x42 (``cmd`` argument
+in the ``handle_vendorcommand`` interrupt service routine in the microcontroller
+firmware), 0x55 is the SETUPDAT+2 in the microcontroller firmware, and ``msg``
+is recovered in Endpoint 0 Buffer ``*(uint32_t *)EP0BUF``.
