@@ -22,3 +22,17 @@ Then, executing ``python3 ./readwrite_PLL.py`` updates the ADC configuration reg
 by doubling the ADC clock (REFDIV from 0x3 for x1 to 0x0 for x2) and running again ``pocket_dump`` this 
 time indicates a datarate of 16 Msamples/s, demonstrating that the manipulation of the registers
 of the MAX2771 from Python and the SDCC firmware is correctly understood.
+
+# Testing the communication
+
+Even without MAX2771, FX2LP bulk communication can be checked by connecting a square
+wave generator to the IFCLK and checking the matching datarate with the PocketSDR
+``pocket_dump``
+
+<img src="IMG_20241023_135337_756small.jpg" width=400>
+
+```sh
+$ sudo ./pocket_dump -t 1 
+  TIME(s)    T   CH1(Bytes)   T   CH2(Bytes)   RATE(Ks/s)
+      1.0    I      6029312   I      6029312       5981.5
+```
