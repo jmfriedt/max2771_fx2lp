@@ -90,4 +90,35 @@ the firmware compiled using ``sdcc``.
 direction (0x40, from host to device), sending vendor request 0x42 (``cmd`` argument
 in the ``handle_vendorcommand`` interrupt service routine in the microcontroller
 firmware), 0x55 is the SETUPDAT+2 in the microcontroller firmware, and ``msg``
-is recovered in Endpoint 0 Buffer ``*(uint32_t *)EP0BUF``.
+is recovered in Endpoint 0 Buffer ``*(uint32_t *)EP0BUF``. From the [Technical Reference
+Manual](https://www.keil.com/dd/docs/datashts/cypress/fx2_trm.pdf) (page 78, section
+2.3.11) we see the structure of the Vendor Request with the length in bytes 6 and 7, matching
+``uint16_t len = WORD_(SETUPDAT + 6);`` in ``BOOL handle_vendorcommand(BYTE cmd)``.
+
+### Vendor Request handling
+
+The Vendor Request is managed by polling 
+```C
+ while(TRUE) {
+    if ( got_sud ) { handle_setupdata(); got_sud=FALSE;}
+ }
+```
+where ``handle_setupdata();`` in ``fx2lib/lib/setupdat.c`` includes
+```
+void handle_setupdata(void) {
+...
+        default:
+         if (!handle_vendorcommand(SETUPDAT[1])) {
+            printf ( "Unhandled Vendor Command: %02x\n" , SETUPDAT[1] );
+            STALLEP0();
+         }
+...
+```
+The ``got_sud`` flag is set in the ISR 
+```C
+void sudav_isr(void) __interrupt (SUDAV_ISR) {
+  got_sud=TRUE;
+  CLEAR_SUDAV();
+}   
+```
+with the ISR vector defined in ``fx2lib/lib/usbav.a51``.
