@@ -1,4 +1,5 @@
 ## Blinking LED example
+
 1. Closing the jumper to the right (when the USB connector is facing upward) next to the on-board LEDs,
 compile with ``make`` and transfer to RAM for execution with ``make flash`` (requires ``sudo`` privilege)
 to execute the program from RAM. The two on-boards LEDs should blink alterately evey 1 s.
@@ -9,4 +10,5 @@ to execute the program from RAM. The two on-boards LEDs should blink alterately 
 <img src="IMG_20240630_071856_840.jpg" width=200>
 <img src="IMG_20240630_071900_957.jpg" width=200>
 
-
+The LED anode is connected to the supply voltage and the cathode to the microcontroller pins, so
+the LEDs are lit when the GPIO is set to 0 and switched off when the GPIO is set to 1.
