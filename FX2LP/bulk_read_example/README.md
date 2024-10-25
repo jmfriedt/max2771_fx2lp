@@ -1,4 +1,4 @@
-### Bulk access from FX2LP microcontroller to Linux host
+### Bulk access from FX2LP microcontroller to Linux host: device to host
 
 ## Execution from RAM
 
@@ -47,3 +47,8 @@ or
 ```
 sudo python3 ./bulk_read.py
 ```
+
+For this example to operate correctly, the following hardware settings are needed:
+
+<img src="pinout.png">
+

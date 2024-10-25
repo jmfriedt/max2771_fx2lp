@@ -6,8 +6,8 @@
 
 1. create a FIFO with
 ```
-mkfifo /tmp/fifo1in
-chmod 777 /tmp/fifo1in
+sudo mkfifo /tmp/fifo1in
+sudo chmod 777 /tmp/fifo1in
 ```
 2. configure the MAX2771 for 8 MS/s and 2 MHz IF, and check PocketSDR configuration
 ```

@@ -69,7 +69,7 @@ SIG= L1CA, PRN=  32, COFF=  0.42037 ms, DOP=  2314 Hz, C/N0= 46.3 dB-Hz
 pluto-gps-sim$ sudo ./pluto-gps-sim  -e hour3270.19n  -A -65 -t  2019/11/23,09:00:00  -l 48.3621221,-4.8223307,100 -U usb:3.28.5
 ```
 
-<img src="IMG_20241005_113724_284.jpg" width=500>
+<img src="IMG_20241005_113724_284.jpg" width=700>
 
 Experimental setup for the spoofing demonstration: a PlutoSDR either clocked by its internal TCXO (above) or an
 external high quality OCXO (no shown) is used to generate GPS L1 C/A signals feeding the dual MAX2771 board.
