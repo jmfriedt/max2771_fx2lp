@@ -2,7 +2,9 @@
 
 See [this movie](https://www.youtube.com/watch?v=B5UcFnkbXIk) to assess what the result of this
 invesigation might be. Many more GNSS bands and processing schemes are available with the very
-flexible SDR reception platform.
+flexible SDR reception platform. This [article](hackable_max2771_1eng.pdf) published in the
+French magazine Hackable (Nov-Dec 2024) and translated to English with the help of a chatbot
+summarizes the main development steps and results.
 
 ### Objective: multi-MAX2771 GNSS receiver with up to 44 MS/s bulk USB communication
 
