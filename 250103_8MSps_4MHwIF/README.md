@@ -1,5 +1,9 @@
 ## Dual channel reception (channel1 lower band, channel2 upper band)
 
+Objective: time difference between UBlox Zed-F9P and ``gnss-sdr`` generated RINEX from PocketSDR:
+
+<img src="principle.png">
+
 # Configuration definition
 
 Select lower L-band on channel1:
@@ -53,6 +57,7 @@ and a sampling rate of 8 MS/s (same as before).
 # Processing
 
 ```bash
+str2str -in ntrip://caster.centipede.fr:2101/ENSMM -out file://sortie.bin
 sudo ./app/pocket_conf/pocket_conf conf/pocket_L5L1_8MHz_4MHz.conf   # configure PocketSDR
 sudo ./app/pocket_conf/pocket_conf                                   # check configuration
 sudo ./app/pocket_dump/pocket_dump -t 300 1.bin 2.bin                # acquire 5 min (8 MS/s x 2 channels = 4.8 GB))
@@ -63,6 +68,7 @@ python3 ../python/pocket_acq.py -f 8 -fi 4 -sig L5I  -prn 1-32 1.bin
 gnss-sdr -c File_Galileo_E1_char.conf
 gnss-sdr -c File_Galileo_E5_char.conf
 gnss-sdr -c File_GPS_L1_char.conf
+convbin sortie.bin
 rinex-cli/target/release/rinex-cli --fp galileoE1.25O diff ublox.25O   # see https://github.com/georust/rinex/tree/main/tutorials/DIFF
 rinex-cli/target/release/rinex-cli --fp gps.25O diff ublox.25O   # see https://github.com/georust/rinex/tree/main/tutorials/DIFF
 rinex-cli/target/release/rinex-cli --fp WORKSPACE/galileoE1/DIFFERENCED.25O filegen --csv
