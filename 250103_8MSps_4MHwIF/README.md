@@ -74,3 +74,5 @@ rinex-cli/target/release/rinex-cli --fp gps.25O diff ublox.25O   # see https://g
 rinex-cli/target/release/rinex-cli --fp WORKSPACE/galileoE1/DIFFERENCED.25O filegen --csv
 rinex-cli/target/release/rinex-cli --fp WORKSPACE/gps/DIFFERENCED.25O filegen --csv
 ```
+
+<img src="channels.jpg">
