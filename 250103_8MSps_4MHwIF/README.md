@@ -16,7 +16,7 @@ F3OR5           =       1  # Filter order selection (0:5th,1:3rd)
 FCENX           =       0  # Polyphase filter selection (0:lowpass,1:bandpass)
 LOBAND          =       1  # Local oscillator band selection (0:L1,1:L2/L5)
 ```
-with an IF frequency of 4 MHz since $24*(48+893474/2^{20})=1172.449997~1176.45-4$ MHz:
+with an IF frequency of 4 MHz since $24*(48+893474/2^{20})=1172.449997\simeq 1176.45-4$ MHz:
 ```
 INT_PLL         =       0  # PLL mode control (0:fractional-N,1:integer-N)
 NDIV            =      48  # PLL integer division ratio (36-32767): F_LO=F_XTAL/RDIV*(NDIV+FDIV/2^20)
@@ -45,7 +45,7 @@ F3OR5           =       1  # Filter order selection (0:5th,1:3rd)
 FCENX           =       0  # Polyphase filter selection (0:lowpass,1:bandpass)
 LOBAND          =       0  # Local oscillator band selection (0:L1,1:L2/L5)
 ```
-with an IF frequency of 4 MHz since $24*(65+498948/2^{20})=1571.420013~1575.42-4$ MHz:
+with an IF frequency of 4 MHz since $24*(65+498948/2^{20})=1571.420013\simeq 1575.42-4$ MHz:
 ```
 INT_PLL         =       0  # PLL mode control (0:fractional-N,1:integer-N)
 NDIV            =      65  # PLL integer division ratio (36-32767): F_LO=F_XTAL/RDIV*(NDIV+FDIV/2^20)
