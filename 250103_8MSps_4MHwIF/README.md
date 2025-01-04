@@ -31,8 +31,6 @@ REFCLK_M_CNT    =       0  # Clock pre-divider M counter value (0-4095)
 ADCCLK          =       0  # Integer clock div/mul selection (0:enable,1:bypass)
 REFDIV          =       3  # Integer clock div/mul ratio (0:x2,1:1/4,2:1/2,3:x1,4:x4)
 FCLKIN          =       0  # ADC clock divider selection (0:bypass,1:enable)
-ADCCLK_L_CNT    =       0  # ADC clock divider L counter value (0-4095): L_CNT/(4096-M_CNT+L_CNT)
-ADCCLK_M_CNT    =       0  # ADC clock divider M counter value (0-4095)
 ```
 
 Similarly for channel 2, select upper L-band:
