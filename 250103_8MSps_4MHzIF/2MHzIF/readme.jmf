@@ -1,0 +1,4 @@
+../../../../23_ESA/rinex-cli/target/release/rinex-cli --fp gps.25O diff sortie.obs 
+../../../../23_ESA/rinex-cli/target/release/rinex-cli --fp galileoE1.25O diff sortie.obs 
+../../../../23_ESA/rinex-cli/target/release/rinex-cli  --fp WORKSPACE/gps/DIFFERENCED.25O filegen --csv
+
