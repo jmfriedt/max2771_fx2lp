@@ -76,3 +76,13 @@ rinex-cli/target/release/rinex-cli --fp WORKSPACE/gps/DIFFERENCED.25O filegen --
 <img src="channels.jpg">
 
 <img src="IMG_20250107_191651_365.png">
+
+Results
+
+Cable length | delay | std |
+------------ |-------|-----| 
+0m       | 6.2 +/-| 5.6|
+2m       | -5.9 +/-|4.4|
+4m       |-16.4 +/- |2.7|
+5m80     | -24.7 +/-| 3.6|
+
