@@ -8,7 +8,7 @@ French magazine Hackable (Nov-Dec 2024) and translated to English with the help 
 [chatbot](https://products.aspose.ai/total/translator/) summarize the main development steps and results.
 
 This project was featured on [https://hackaday.com/2024/11/03/gnss-reception-with-clone-sdr-board/](Hackaday)
-November 3rd, 2024.
+November 3rd, 2024 and presented at the [https://www.fosdem.org/2025/schedule/event/fosdem-2025-4150-broadband-data-transfer-over-usb-for-gnu-linux-1-2-ghz-l-band-sdr-receiver-dedicated-to-gnss-and-other-reception-interfacing-with-pocketsdr-gnu-radio-and-gnss-sdr/](2025 FOSDEM).
 
 ### Objective: multi-MAX2771 GNSS receiver with up to 44 MS/s bulk USB communication
 
