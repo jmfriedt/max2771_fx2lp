@@ -1,10 +1,14 @@
 ## MAX2771 multiband GNSS receiver for FX2LP
 
 See [this movie](https://www.youtube.com/watch?v=B5UcFnkbXIk) to assess what the result of this
-invesigation might be. Many more GNSS bands and processing schemes are available with the very
-flexible SDR reception platform. This [article](hackable_max2771_1eng.pdf) published in the
-French magazine Hackable (Nov-Dec 2024) and translated to English with the help of a chatbot
-summarizes the main development steps and results.
+investigation might be. Many more GNSS bands and processing schemes are available with the very
+flexible SDR reception platform. These [article](hackable_max2771_1eng.pdf) and
+[article](hackable_max2771_2_eng.pdf) published in the
+French magazine Hackable (Nov-Dec 2024) and translated to English with the help of a 
+[chatbot](https://products.aspose.ai/total/translator/) summarize the main development steps and results.
+
+This project was featured on [https://hackaday.com/2024/11/03/gnss-reception-with-clone-sdr-board/](Hackaday)
+November 3rd, 2024.
 
 ### Objective: multi-MAX2771 GNSS receiver with up to 44 MS/s bulk USB communication
 
