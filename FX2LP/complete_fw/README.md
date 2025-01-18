@@ -5,7 +5,7 @@ sudo cycfx2prog prg:build/complete_fw.ihx run
 ```
 for executing from RAM, or
 ```
-sudo fxload load_eeprom --device 04b4:8613 --ihex-path ./build/complete_fw.ihx -t FX2LP --control-byte 0xC2 -s ../bulk_read_example/Vend_Ax.hex
+sudo ../../fxload/src/fxload load_eeprom --device 04b4:8613 --ihex-path ./build/complete_fw.ihx -t FX2LP --control-byte 0xC2 -s ../bulk_read_example/Vend_Ax.hex
 ```
 for flashing to non-volatile memory.
 
@@ -63,3 +63,30 @@ for the circuit to be identified as (notice the PID as 1005 instead of 1004)
 ```
 Bus 003 Device 044: ID 04b4:1005 Cypress Semiconductor Corp. There
 ```
+
+Changing VID/PID for using multiple boards on the same computer is however not needed since ``pocket_conf``
+and ``pocket_dump`` use the ``-p`` flag to define which chip is addressed:
+```
+$ lsusb
+Bus 001 Device 125: ID 04b4:1004 Cypress Semiconductor Corp. There
+Bus 001 Device 126: ID 04b4:1004 Cypress Semiconductor Corp. There
+$ sudo app/pocket_scan/pocket_scan
+...
+( 4) BUS= 1 PORT= 6 SPEED=HIGH  ID=04B4:1004  Hi There iFace
+( 5) BUS= 1 PORT= 5 SPEED=HIGH  ID=04B4:1004  Hi There iFace
+...
+$ sudo ./app/pocket_conf/pocket_conf -p 1,5 conf/pocket_L1L5_20MHz.conf 
+Pocket SDR device settings are changed.
+$ sudo ./app/pocket_conf/pocket_conf -p 1,6 conf/pocket_L1L5_20MHz.conf 
+Pocket SDR device settings are changed.
+$ rm -f *bin
+$ sleep 2 && sudo ./app/pocket_dump/pocket_dump -p 1,5 -t 300  11.bin 12.bin 
+  TIME(s)    T   CH1(Bytes)   T   CH2(Bytes)   RATE(Ks/s)
+      4.8   IQ    193069056  IQ    193069056      20034.0
+$ sudo ./app/pocket_dump/pocket_dump -p 1,6 -t 300  21.bin 22.bin 
+TIME(s)    T   CH1(Bytes)   T   CH2(Bytes)   RATE(Ks/s)
+     17.2   IQ    689176576  IQ    689176576      19985.2
+```
+
+See slide 26 of https://gpspp.sakura.ne.jp/paper2005/pocketsdr_seminar_202411_revA.pdf for a detailed
+description of ``pocket_scan``.
