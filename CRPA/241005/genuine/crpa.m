@@ -5,7 +5,7 @@ pkg load signal
 ifreq=2e6;
 fs=8e6;
 
-l=0.05
+l=0.05e6;
 threshold=10000;
 
 f=fopen("1genuine1.bin");
@@ -13,9 +13,9 @@ d=fread(f,1e6,'int8'); d=d-mean(d);
 t=[0:length(d)-1]'/fs;
 lo=exp(j*2*pi*t*ifreq);
 d=d.*lo;
-b=firls(256,[0 50e5 70e4 fs/2]*2/fs,[1 1 0 0]);
+b=firls(256,[0 1.5e6 2e6 fs/2]*2/fs,[1 1 0 0]);
 d=filter(b,1,d);
-fd=linspace(-4,4,length(d));
+fd=linspace(-fs/2,fs/2,length(d));
 kindex=find((fd>-l) & (fd < l));
 kfreq=fd(kindex);
 subplot(311)
@@ -31,7 +31,7 @@ t=[0:length(d)-1]'/fs;
 lo=exp(j*2*pi*t*ifreq);
 d=d.*lo;
 d=filter(b,1,d);
-fd=linspace(-4,4,length(d));
+fd=linspace(-fs/2,fs/2,length(d));
 subplot(312)
 res2=fftshift(fft(d.^2))(kindex);
 plot(kfreq,abs(res2))
