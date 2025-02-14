@@ -2,10 +2,7 @@
 
 See [this movie](https://www.youtube.com/watch?v=B5UcFnkbXIk) to assess what the result of this
 investigation might be. Many more GNSS bands and processing schemes are available with the very
-flexible SDR reception platform. These [article](hackable_max2771_1eng.pdf) and
-[article](hackable_max2771_2_eng.pdf) published in the
-French magazine Hackable (Nov-Dec 2024) and translated to English with the help of a 
-[chatbot](https://products.aspose.ai/total/translator/) summarize the main development steps and results.
+flexible SDR reception platform. 
 
 This project was featured on [Hackaday](https://hackaday.com/2024/11/03/gnss-reception-with-clone-sdr-board/)
 November 3rd, 2024 and presented at the [2025 FOSDEM](https://www.fosdem.org/2025/schedule/event/fosdem-2025-4150-broadband-data-transfer-over-usb-for-gnu-linux-1-2-ghz-l-band-sdr-receiver-dedicated-to-gnss-and-other-reception-interfacing-with-pocketsdr-gnu-radio-and-gnss-sdr/).
@@ -77,3 +74,45 @@ restart the FX2LP: ``lsusb`` must now indicate ``ID 04b4:1004 Cypress Semiconduc
 
 If so, the FX2LP is ready to communicate with PocketSDR ``app/pocket_conf/pocket_conf`` for configuring the MAX2771 (SPI communication)
 or with ``app/pocket_dump/pocket_dump`` for streaming data from the FX2LP to the host computer through a USB Bulk interface.
+
+## Cross compiling PocketSDR with Buildroot
+
+Make sure FFTW with single precision resolution, and libusb are included 
+in the Buildroot compilation toolchain.
+
+0. in ``PocketSDR/lib/``: ``./clone_lib.sh`` as would be done on the host
+1. in ``PocketSDR/lib/libfec``: 
+```
+./configure cross_compiling=yes --build=aarch64-buildroot-linux-gnu CC=aarch64-buildroot-linux-gnu-gcc
+```
+2. in ``PocketSDR/lib/build``, replace all ``CC = gcc`` in all .mk files with
+``CC ?= gcc``, remove ``-DAVX2 -mavx2 -mfma`` from ``libsdr.mk``, and 
+```
+CC=aarch64-linux-gcc make
+make install
+```
+3. in ``PocketSDR_RPi4/app``: edit all ``*/makefile`` and replace ``CC = g..``
+with ``CC ?= g..`` (where .. is ``cc`` or ``++``), remove ``-DAVX2 -mavx2 -mfma``
+from the ``pocket_snap`` makefile, and in ``makefile`` replace 
+all ``make -C`` with ``CC=aarch64-linux-gcc make -C``
+4. on a Raspberry Pi, make sure to increase CPU performance:
+```
+echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+```
+5. on a Raspberry Pi, make sure to write to a ramfs rather than the slow
+SD card (``/tmp`` must be a tmpfs)
+
+```
+# ./app/pocket_dump/pocket_dump -t 10 /tmp/1.bin /tmp/2.bin
+  TIME(s)    T   CH1(Bytes)   T   CH2(Bytes)   RATE(Ks/s)
+     10.0   IQ     79953920  IQ     79953920       3995.3
+# lsusb
+Bus 001 Device 001: ID 1d6b:0002
+Bus 001 Device 003: ID 04b4:1004
+Bus 001 Device 002: ID 2109:3431
+Bus 002 Device 001: ID 1d6b:0003
+# uname -a
+Linux buildroot 6.6.28-v8 #1 SMP PREEMPT Mon Feb  3 08:00:06 UTC 2025 aarch64 GNU/Linux
+```
+and the acqisition is validated on the host (the Raspberry Pi is lacking matplotlib and scipy)
+with ``python3 python/pocket_acq.py -f 4  -sig L1CA -prn 1-32 /tmp/2.bin``
