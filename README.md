@@ -2,7 +2,8 @@
 
 See [this movie](https://www.youtube.com/watch?v=B5UcFnkbXIk) to assess what the result of this
 investigation might be. Many more GNSS bands and processing schemes are available with the very
-flexible SDR reception platform. 
+flexible SDR reception platform. The use and results from the software in this repository
+are featured in the French magazine <a href="https://connect.ed-diamond.com/hackable/hk-057/programmation-usb-sous-gnu-linux-application-du-fx2lp-pour-un-recepteur-de-radio-logicielle-dedie-aux-signaux-de-navigation-par-satellite-1-2">Hackable</a> (Nov-Dec 2024 and Mar-Apr 2025)
 
 This project was featured on [Hackaday](https://hackaday.com/2024/11/03/gnss-reception-with-clone-sdr-board/)
 November 3rd, 2024 and presented at the [2025 FOSDEM](https://www.fosdem.org/2025/schedule/event/fosdem-2025-4150-broadband-data-transfer-over-usb-for-gnu-linux-1-2-ghz-l-band-sdr-receiver-dedicated-to-gnss-and-other-reception-interfacing-with-pocketsdr-gnu-radio-and-gnss-sdr/).
