@@ -11,18 +11,15 @@ and processed using the GNU Octave scripts:
 
 ``correlate_galileo1B_char.m`` and ``correlate_galileo1C_char.m``
 
-<img src="E1B.png" width=320>
-<img src="E1C.png" width=320>
+<img src="E1B.png" width=320><img src="E1C.png" width=320>
 
 ``correlate_galileoE5_char.m`` using E5I+jE5Q and E5I-jE5Q
 
-<img src="E5I+jE5Q.png" width=320>
-<img src="E5I-jE5Q.png" width=320>
+<img src="E5I+jE5Q.png" width=320><img src="E5I-jE5Q.png" width=320>
 
 ``correlate_gpsL5_char.m`` using L5I+jL5Q and L5I-jL5Q
 
-<img src="L5I+jL5Q.png" width=320>
-<img src="L5I-jL5Q.png" width=320>
+<img src="L5I+jL5Q.png" width=320><img src="L5I-jL5Q.png" width=320>
 
 matching the observed constellation
 
