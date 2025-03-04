@@ -23,4 +23,4 @@ and processed using the GNU Octave scripts:
 
 matching the observed constellation
 
-<img src="Screenshot_20250304-093028.png">
+<img src="Screenshot_20250304-093028.png" width=320>
