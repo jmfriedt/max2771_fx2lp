@@ -4,3 +4,6 @@
 [submodule "fxload"]
 	path = fxload
 	url = https://github.com/mbed-ce/fxload
+[submodule "250304_L1L5_32MHz/GNSS-matlab"]
+	path = 250304_L1L5_32MHz/GNSS-matlab
+	url = https://github.com/danipascual/GNSS-matlab
