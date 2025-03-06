@@ -3,7 +3,7 @@ Data collected using PocketSDR configuration
 app/pocket_conf/pocket_conf conf/pocket_L1L5_32MHz.conf
 app/pocket_dump/pocket_dump -t 1 1h.bin 2l.bin
 ``` 
-and processed using the GNU Octave scripts:
+so interleaved 8-bit integers sampled at 32 MS/s. Files processed using the GNU Octave scripts:
 
 ``correlate_gpsL1_char.m``
 
