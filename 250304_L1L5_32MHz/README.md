@@ -13,9 +13,9 @@ so interleaved 8-bit integers sampled at 32 MS/s. Files processed using the GNU 
 
 <img src="E1B.png" width=320><img src="E1C.png" width=320>
 
-``correlate_galileoE5_char.m`` using E5I+jE5Q and E5I-jE5Q
+``correlate_galileoE5a_char.m`` using E5aI+jE5aQ and E5aI-jE5aQ
 
-<img src="E5I+jE5Q.png" width=320><img src="E5I-jE5Q.png" width=320>
+<img src="E5aI+jE5aQ.png" width=320><img src="E5aI-jE5aQ.png" width=320>
 
 ``correlate_gpsL5_char.m`` using L5I+jL5Q and L5I-jL5Q
 
