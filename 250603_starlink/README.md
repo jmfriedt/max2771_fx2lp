@@ -4,7 +4,7 @@ Satellite-TV Low Noise Block (LNB) receivers are fitted with a 9.75 GHz local
 oscillator. When receiver the 11.325 GHz beacon signal from Starlink, the
 output signal is at 11.325-9.75=1.575 GHz which is nearly exactly the GPS L1 band.
 
-Using the provided configuration file, the following recording was visible
+Using the provided <a href="pocket_L1L1_4MHzstarlink.conf">configuration file</a>, the following recording was visible
 from Besancon in France on June 3, 2025.
 
 <img src="starlink_max2771.png">
