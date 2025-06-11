@@ -1,3 +1,13 @@
+# Phase stability between two MAX2771 clocked with the same source
+
+Phase coherence is lost if programming from upper to lower or lower to
+upper L-band.
+
+Phase coherence is lost when starting from scratch a new acquisition.
+
+Phase seems to be kept when streaming continuously IQ (ZMQ Publish) and
+programming within the upper or lower L-band.
+
 ## Raw measurement outputs
 
 ```
