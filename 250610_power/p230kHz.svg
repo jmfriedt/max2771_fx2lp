@@ -1,0 +1,1298 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="668pt"
+   viewBox="0 0 1175 668"
+   width="1175pt"
+   version="1.1"
+   id="svg63"
+   sodipodi:docname="p230kHz.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   inkscape:export-filename="p230kHz.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview63"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     inkscape:zoom="0.5"
+     inkscape:cx="524"
+     inkscape:cy="294"
+     inkscape:window-width="1680"
+     inkscape:window-height="1031"
+     inkscape:window-x="-5"
+     inkscape:window-y="-5"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg63"
+     showgrid="true">
+    <inkscape:grid
+       id="grid117"
+       units="pt"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="0.99999998"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <title
+     id="title1">Figure 1</title>
+  <desc
+     id="desc1">
+Creator: GL2PS 1.4.2, (C) 1999-2020 C. Geuzaine
+For: Octave
+CreationDate: Tue Jun 10 08:10:29 2025
+</desc>
+  <defs
+     id="defs1">
+    <clipPath
+       id="clipPath48">
+      <polygon
+         points="0,668 1175,668 1175,0 0,0"
+         id="polygon48" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath63">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon64" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath64">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon65" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath65">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon66" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath66">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon67" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath67">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon68" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath68">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon69" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath69">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon70" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath70">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon71" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath71">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon72" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath72">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon73" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath73">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon74" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath74">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon75" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath75">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon76" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath76">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon77" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath77">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon78" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath78">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon79" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath79">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon80" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath80">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon81" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath81">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon82" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath82">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon83" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath83">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon84" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath84">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon85" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath85">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon86" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath86">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon87" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath87">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon88" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath88">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon89" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath89">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon90" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath90">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon91" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath91">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon92" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath92">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon93" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath93">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon94" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath94">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon95" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath95">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon96" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath96">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon97" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath97">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon98" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath98">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon99" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath99">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon100" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath100">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon101" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath101">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon102" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath102">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon103" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath103">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon104" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath104">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon105" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath105">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon106" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath106">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon107" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath107">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon108" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath108">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon109" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath109">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon110" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath110">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon111" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath111">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon112" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath112">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon113" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath113">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon114" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath114">
+      <polygon
+         points="0,0 0,668 1175,668 1175,0 "
+         id="polygon115" />
+    </clipPath>
+  </defs>
+  <polyline
+     fill="none"
+     points="152.81,595.37 152.81,586.256"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline4"
+     clip-path="url(#clipPath99)" />
+  <polyline
+     fill="none"
+     points="152.81,50.1716 152.81,59.2856"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline5"
+     clip-path="url(#clipPath98)" />
+  <polyline
+     fill="none"
+     points="335.023,595.37 335.023,586.256"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline6"
+     clip-path="url(#clipPath97)" />
+  <polyline
+     fill="none"
+     points="335.023,50.1716 335.023,59.2856"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline7"
+     clip-path="url(#clipPath96)" />
+  <polyline
+     fill="none"
+     points="517.236,595.37 517.236,586.256"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline8"
+     clip-path="url(#clipPath95)" />
+  <polyline
+     fill="none"
+     points="517.236,50.1716 517.236,59.2856"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline9"
+     clip-path="url(#clipPath94)" />
+  <polyline
+     fill="none"
+     points="699.449,595.37 699.449,586.256"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline10"
+     clip-path="url(#clipPath93)" />
+  <polyline
+     fill="none"
+     points="699.449,50.1716 699.449,59.2856"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline11"
+     clip-path="url(#clipPath92)" />
+  <polyline
+     fill="none"
+     points="881.662,595.37 881.662,586.256"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline12"
+     clip-path="url(#clipPath91)" />
+  <polyline
+     fill="none"
+     points="881.662,50.1716 881.662,59.2856"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline13"
+     clip-path="url(#clipPath90)" />
+  <polyline
+     fill="none"
+     points="1063.88,595.37 1063.88,586.256"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline14"
+     clip-path="url(#clipPath89)" />
+  <polyline
+     fill="none"
+     points="1063.88,50.1716 1063.88,59.2856"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline15"
+     clip-path="url(#clipPath88)" />
+  <g
+     font-family="FreeSans"
+     font-size="10px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(139.324,610.872)"
+     xml:space="preserve"
+     id="g15">
+    <text
+   fill="#262626"
+   x="0 6 9 15 21"
+   y="0"
+   id="text15">0.233</text>
+   </g>
+  <g
+     font-family="FreeSans"
+     font-size="10px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(318.537,610.872)"
+     xml:space="preserve"
+     id="g16">
+    <text
+   fill="#262626"
+   x="0 6 9 15 21 27"
+   y="0"
+   id="text16">0.2332</text>
+   </g>
+  <g
+     font-family="FreeSans"
+     font-size="10px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(500.75,610.872)"
+     xml:space="preserve"
+     id="g17">
+    <text
+   fill="#262626"
+   x="0 6 9 15 21 27"
+   y="0"
+   id="text17">0.2334</text>
+   </g>
+  <g
+     font-family="FreeSans"
+     font-size="10px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(682.963,610.872)"
+     xml:space="preserve"
+     id="g18">
+    <text
+   fill="#262626"
+   x="0 6 9 15 21 27"
+   y="0"
+   id="text18">0.2336</text>
+   </g>
+  <g
+     font-family="FreeSans"
+     font-size="10px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(865.177,610.872)"
+     xml:space="preserve"
+     id="g19">
+    <text
+   fill="#262626"
+   x="0 6 9 15 21 27"
+   y="0"
+   id="text19">0.2338</text>
+   </g>
+  <g
+     font-family="FreeSans"
+     font-size="10px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(1050.39,610.872)"
+     xml:space="preserve"
+     id="g20">
+    <text
+   fill="#262626"
+   x="0 6 9 15 21"
+   y="0"
+   id="text20">0.234</text>
+   </g>
+  <polyline
+     fill="none"
+     points="152.81,595.37 161.917,595.37"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline20"
+     clip-path="url(#clipPath87)" />
+  <polyline
+     fill="none"
+     points="1063.88,595.37 1054.77,595.37"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline21"
+     clip-path="url(#clipPath86)" />
+  <polyline
+     fill="none"
+     points="152.81,496.243 161.917,496.243"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline22"
+     clip-path="url(#clipPath85)" />
+  <polyline
+     fill="none"
+     points="1063.88,496.243 1054.77,496.243"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline23"
+     clip-path="url(#clipPath84)" />
+  <polyline
+     fill="none"
+     points="152.81,397.116 161.917,397.116"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline24"
+     clip-path="url(#clipPath83)" />
+  <polyline
+     fill="none"
+     points="1063.88,397.116 1054.77,397.116"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline25"
+     clip-path="url(#clipPath82)" />
+  <polyline
+     fill="none"
+     points="152.81,297.989 161.917,297.989"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline26"
+     clip-path="url(#clipPath81)" />
+  <polyline
+     fill="none"
+     points="1063.88,297.989 1054.77,297.989"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline27"
+     clip-path="url(#clipPath80)" />
+  <polyline
+     fill="none"
+     points="152.81,198.862 161.917,198.862"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline28"
+     clip-path="url(#clipPath79)" />
+  <polyline
+     fill="none"
+     points="1063.88,198.862 1054.77,198.862"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline29"
+     clip-path="url(#clipPath78)" />
+  <polyline
+     fill="none"
+     points="152.81,99.7351 161.917,99.7351"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline30"
+     clip-path="url(#clipPath77)" />
+  <polyline
+     fill="none"
+     points="1063.88,99.7351 1054.77,99.7351"
+     stroke="#262626"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline31"
+     clip-path="url(#clipPath76)" />
+  <g
+     font-family="FreeSans"
+     font-size="10px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(141.824,599.37)"
+     xml:space="preserve"
+     id="g31">
+    <text
+   fill="#262626"
+   x="0"
+   y="0"
+   id="text31">0</text>
+   </g>
+  <g
+     font-family="FreeSans"
+     font-size="10px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(117.824,500.243)"
+     xml:space="preserve"
+     id="g32">
+    <text
+   fill="#262626"
+   x="0 6 12 18 24"
+   y="0"
+   id="text32">20000</text>
+   </g>
+  <g
+     font-family="FreeSans"
+     font-size="10px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(117.824,401.116)"
+     xml:space="preserve"
+     id="g33">
+    <text
+   fill="#262626"
+   x="0 6 12 18 24"
+   y="0"
+   id="text33">40000</text>
+   </g>
+  <g
+     font-family="FreeSans"
+     font-size="10px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(117.824,301.989)"
+     xml:space="preserve"
+     id="g34">
+    <text
+   fill="#262626"
+   x="0 6 12 18 24"
+   y="0"
+   id="text34">60000</text>
+   </g>
+  <g
+     font-family="FreeSans"
+     font-size="10px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(117.824,202.862)"
+     xml:space="preserve"
+     id="g35">
+    <text
+   fill="#262626"
+   x="0 6 12 18 24"
+   y="0"
+   id="text35">80000</text>
+   </g>
+  <g
+     font-family="FreeSans"
+     font-size="10px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(118.824,103.735)"
+     xml:space="preserve"
+     id="g36">
+    <text
+   fill="#262626"
+   x="0 6 11 17 23"
+   y="0"
+   id="text36">1e+05</text>
+   </g>
+  <polyline
+     fill="none"
+     points="152.81,595.37 1063.88,595.37"
+     stroke="#262626"
+     stroke-dasharray="16, 0"
+     stroke-linecap="square"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline36"
+     clip-path="url(#clipPath75)" />
+  <polyline
+     fill="none"
+     points="152.81,50.1716 1063.88,50.1716"
+     stroke="#262626"
+     stroke-dasharray="16, 0"
+     stroke-linecap="square"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline37"
+     clip-path="url(#clipPath74)" />
+  <polyline
+     fill="none"
+     points="152.81,595.37 152.81,50.1716"
+     stroke="#262626"
+     stroke-dasharray="16, 0"
+     stroke-linecap="square"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline38"
+     clip-path="url(#clipPath73)" />
+  <polyline
+     fill="none"
+     points="1063.88,595.37 1063.88,50.1716"
+     stroke="#262626"
+     stroke-dasharray="16, 0"
+     stroke-linecap="square"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline39"
+     clip-path="url(#clipPath72)" />
+  <g
+     font-family="FreeSans"
+     font-size="11px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(557.857,627.872)"
+     xml:space="preserve"
+     id="g39">
+    <text
+   fill="#262626"
+   x="0 3 7 13 19 25 31 37 43 48 51 57 60 63 68 74 77 80 84 92 97"
+   y="-3"
+   id="text39">frequency offset (Hz)</text>
+   </g>
+  <g
+     font-family="FreeSans"
+     font-size="11px"
+     font-style="normal"
+     font-weight="normal"
+     transform="rotate(-90,232.5473,119.7237)"
+     xml:space="preserve"
+     id="g40">
+    <text
+   fill="#262626"
+   x="0 6 12 20 26 30 33 37 43 46 52 55"
+   y="-3"
+   id="text40">power (a.u.)</text>
+   </g>
+  <polyline
+     fill="none"
+     points="151.907,590.391 152.81,590.424 189.259,592.406 225.691,591.141 262.141,592.096 298.591,592.391 335.023,592.648 371.455,590.984 407.922,591.986 444.354,594.087 480.804,591.284 517.236,593.051 553.686,594.281 590.136,590.094 626.567,590.589 662.999,593.69 699.449,592.456 735.899,593.382 772.331,591.628 808.781,588.834 845.23,592.772 881.662,591.523 918.112,592.334 954.544,590.408 990.994,592.783 1027.44,593.286 1063.88,591.643 1064.79,591.585"
+     stroke="#0071bc"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline40"
+     clip-path="url(#clipPath71)" />
+  <polyline
+     fill="none"
+     points="151.907,583.857 152.81,583.848 189.259,580.842 225.691,576.075 262.141,577.853 298.591,576.543 335.023,576.008 371.455,581.539 407.922,582.47 444.354,578.798 480.804,583.717 517.236,575.263 553.686,566.142 590.136,544.226 626.567,516.23 662.999,129.156 699.449,441.324 735.899,524.491 772.331,558.193 808.781,571.918 845.23,581.425 881.662,585.531 918.112,592.866 954.544,587.278 990.994,583.465 1027.44,584.834 1063.88,582.074 1064.79,582.068"
+     stroke="#d85218"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline41"
+     clip-path="url(#clipPath70)"
+     style="stroke-width:2;stroke-dasharray:none" />
+  <polyline
+     fill="none"
+     points="151.907,594.262 152.81,594.288 189.259,592.947 225.691,594.144 262.141,595.257 298.591,594.481 335.023,593.548 371.455,593.303 407.922,593.732 444.354,593.333 480.804,594.204 517.236,590.402 553.686,592.048 590.136,590.612 626.567,592.851 662.999,589.872 699.449,541.389 735.899,583.986 772.331,588.426 808.781,591.639 845.23,590.045 881.662,589.924 918.112,592.387 954.544,590.957 990.994,591.764 1027.44,592.194 1063.88,592.578 1064.79,592.643"
+     stroke="#ecb01f"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline42"
+     clip-path="url(#clipPath69)"
+     style="stroke-width:2;stroke-dasharray:none" />
+  <polyline
+     fill="none"
+     points="151.907,593.847 152.81,593.852 189.259,593.736 225.691,592.7 262.141,593.896 298.591,594.352 335.023,595.048 371.455,590.581 407.922,593.873 444.354,591.461 480.804,593.384 517.236,590.553 553.686,586.23 590.136,584.246 626.567,572.958 662.999,511.962 699.449,563.233 735.899,577.091 772.331,586.198 808.781,586.404 845.23,588.627 881.662,591.822 918.112,587.056 954.544,594.494 990.994,585.169 1027.44,589.764 1063.88,590.148 1064.79,590.253"
+     stroke="#7d2e8d"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline43"
+     clip-path="url(#clipPath68)"
+     style="stroke-width:2;stroke-dasharray:none" />
+  <polyline
+     fill="none"
+     points="151.907,592.726 152.81,592.724 189.259,593.622 225.691,593.866 262.141,593.262 298.591,594.307 335.023,592.19 371.455,592.303 407.922,589.51 444.354,591.322 480.804,589.356 517.236,589.682 553.686,583.239 590.136,582.5 626.567,574.223 662.999,556.94 699.449,433.792 735.899,519.069 772.331,565.092 808.781,577.001 845.23,582.624 881.662,587.121 918.112,588.188 954.544,588.126 990.994,590.907 1027.44,587.645 1063.88,586.99 1064.79,586.953"
+     stroke="#76ab2f"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline44"
+     clip-path="url(#clipPath67)"
+     style="stroke-width:2;stroke-dasharray:none" />
+  <polyline
+     fill="none"
+     points="151.907,591.755 152.81,591.709 189.259,591.644 225.691,592.676 262.141,591.378 298.591,590.497 335.023,590.413 371.455,589.419 407.922,589.714 444.354,591.968 480.804,591.272 517.236,586.856 553.686,585.539 590.136,579.101 626.567,569.743 662.999,553.409 699.449,453.233 735.899,510.698 772.331,569.259 808.781,583.447 845.23,591.385 881.662,591.856 918.112,591.417 954.544,592.787 990.994,591.344 1027.44,589.605 1063.88,586.004 1064.79,586.07"
+     stroke="#4cbded"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline45"
+     clip-path="url(#clipPath66)"
+     style="stroke-width:2;stroke-dasharray:none" />
+  <polyline
+     fill="none"
+     points="151.907,593.15 152.81,593.138 189.259,593.239 225.691,593.119 262.141,593.169 298.591,592.057 335.023,592.906 371.455,591.795 407.922,591.005 444.354,589.329 480.804,590.38 517.236,588.613 553.686,582.354 590.136,583.219 626.567,577.517 662.999,563.924 699.449,516.702 735.899,518.657 772.331,573.669 808.781,582.63 845.23,585.621 881.662,589.577 918.112,590.671 954.544,591.402 990.994,591.184 1027.44,588.908 1063.88,588.799 1064.79,588.869"
+     stroke="#a1132e"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline46"
+     clip-path="url(#clipPath65)"
+     style="stroke-width:2;stroke-dasharray:none" />
+  <polyline
+     fill="none"
+     points="151.907,592.66 152.81,592.65 189.259,593.787 225.691,593.914 262.141,593.377 298.591,594.123 335.023,593.565 371.455,593.46 407.922,592.922 444.354,593.528 480.804,592.226 517.236,592.769 553.686,593.411 590.136,593.56 626.567,593.946 662.999,593.489 699.449,592.213 735.899,591.544 772.331,594.328 808.781,594.022 845.23,594.501 881.662,594.266 918.112,594.493 954.544,594.102 990.994,594.281 1027.44,594.212 1063.88,592.185 1064.79,592.246"
+     stroke="#0071bc"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline47"
+     clip-path="url(#clipPath64)" />
+  <polyline
+     fill="none"
+     points="151.907,593.74 152.81,593.745 189.259,592.873 225.691,590.464 262.141,591.98 298.591,594.209 335.023,591.533 371.455,593.944 407.922,594.535 444.354,593.629 480.804,594.139 517.236,592.514 553.686,593.707 590.136,589.401 626.567,594.431 662.999,593.204 699.449,594.177 735.899,592.484 772.331,594.056 808.781,593.549 845.23,588.364 881.662,591.914 918.112,590.985 954.544,591.397 990.994,593.18 1027.44,588.568 1063.88,592.361 1064.79,592.395"
+     stroke="#d85218"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline48"
+     clip-path="url(#clipPath63)" />
+  <polygon
+     fill="#ffffff"
+     points="1003.02,182.649 1055.32,182.649 1055.32,58.7462 1003.02,58.7462 "
+     shape-rendering="crispEdges"
+     id="polygon49"
+     clip-path="url(#clipPath114)" />
+  <polyline
+     fill="none"
+     points="1003.02,182.649 1055.32,182.649"
+     stroke="#262626"
+     stroke-dasharray="16, 0"
+     stroke-linecap="square"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline49"
+     clip-path="url(#clipPath113)" />
+  <polyline
+     fill="none"
+     points="1003.02,58.7462 1055.32,58.7462"
+     stroke="#262626"
+     stroke-dasharray="16, 0"
+     stroke-linecap="square"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline50"
+     clip-path="url(#clipPath112)" />
+  <polyline
+     fill="none"
+     points="1003.02,182.649 1003.02,58.7462"
+     stroke="#262626"
+     stroke-dasharray="16, 0"
+     stroke-linecap="square"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline51"
+     clip-path="url(#clipPath111)" />
+  <polyline
+     fill="none"
+     points="1055.32,182.649 1055.32,58.7462"
+     stroke="#262626"
+     stroke-dasharray="16, 0"
+     stroke-linecap="square"
+     stroke-linejoin="miter"
+     stroke-width="0.5"
+     id="polyline52"
+     clip-path="url(#clipPath110)" />
+  <polyline
+     fill="none"
+     points="1007.3,67.5351 1028.74,67.5351"
+     stroke="#0071bc"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline53"
+     clip-path="url(#clipPath109)" />
+  <g
+     font-family="FreeSans"
+     font-size="9px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(1033.03,71.5351)"
+     xml:space="preserve"
+     id="g53">
+    <text
+   fill="#000000"
+   x="0 3 8 13"
+   y="0"
+   id="text53">-113</text>
+   </g>
+  <polyline
+     fill="none"
+     points="1007.3,80.8257 1028.74,80.8257"
+     stroke="#d85218"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline54"
+     clip-path="url(#clipPath108)"
+     style="stroke-width:2;stroke-dasharray:none" />
+  <g
+     font-family="FreeSans"
+     font-size="9px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(1033.03,84.8257)"
+     xml:space="preserve"
+     id="g54">
+    <text
+   fill="#000000"
+   x="0 3 8"
+   y="0"
+   id="text54">-43</text>
+   </g>
+  <polyline
+     fill="none"
+     points="1007.3,94.1163 1028.74,94.1163"
+     stroke="#ecb01f"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline55"
+     clip-path="url(#clipPath107)"
+     style="stroke-width:2;stroke-dasharray:none" />
+  <g
+     font-family="FreeSans"
+     font-size="9px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(1033.03,98.1163)"
+     xml:space="preserve"
+     id="g55">
+    <text
+   fill="#000000"
+   x="0 3 8"
+   y="0"
+   id="text55">-53</text>
+   </g>
+  <polyline
+     fill="none"
+     points="1007.3,107.407 1028.74,107.407"
+     stroke="#7d2e8d"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline56"
+     clip-path="url(#clipPath106)"
+     style="stroke-width:2;stroke-dasharray:none" />
+  <g
+     font-family="FreeSans"
+     font-size="9px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(1033.03,111.407)"
+     xml:space="preserve"
+     id="g56">
+    <text
+   fill="#000000"
+   x="0 3 8"
+   y="0"
+   id="text56">-53</text>
+   </g>
+  <polyline
+     fill="none"
+     points="1007.3,120.697 1028.74,120.697"
+     stroke="#76ab2f"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline57"
+     clip-path="url(#clipPath105)"
+     style="stroke-width:2;stroke-dasharray:none" />
+  <g
+     font-family="FreeSans"
+     font-size="9px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(1033.03,124.697)"
+     xml:space="preserve"
+     id="g57">
+    <text
+   fill="#000000"
+   x="0 3 8"
+   y="0"
+   id="text57">-63</text>
+   </g>
+  <polyline
+     fill="none"
+     points="1007.3,133.988 1028.74,133.988"
+     stroke="#4cbded"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline58"
+     clip-path="url(#clipPath104)"
+     style="stroke-width:2;stroke-dasharray:none" />
+  <g
+     font-family="FreeSans"
+     font-size="9px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(1033.03,137.988)"
+     xml:space="preserve"
+     id="g58">
+    <text
+   fill="#000000"
+   x="0 3 8"
+   y="0"
+   id="text58">-73</text>
+   </g>
+  <polyline
+     fill="none"
+     points="1007.3,147.279 1028.74,147.279"
+     stroke="#a1132e"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline59"
+     clip-path="url(#clipPath103)"
+     style="stroke-width:2;stroke-dasharray:none" />
+  <g
+     font-family="FreeSans"
+     font-size="9px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(1033.03,151.279)"
+     xml:space="preserve"
+     id="g59">
+    <text
+   fill="#000000"
+   x="0 3 8"
+   y="0"
+   id="text59">-83</text>
+   </g>
+  <polyline
+     fill="none"
+     points="1007.3,160.569 1028.74,160.569"
+     stroke="#0071bc"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline60"
+     clip-path="url(#clipPath102)" />
+  <g
+     font-family="FreeSans"
+     font-size="9px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(1033.03,164.569)"
+     xml:space="preserve"
+     id="g60">
+    <text
+   fill="#000000"
+   x="0 3 8"
+   y="0"
+   id="text60">-93</text>
+   </g>
+  <polyline
+     fill="none"
+     points="1007.3,173.86 1028.74,173.86"
+     stroke="#d85218"
+     stroke-linecap="butt"
+     stroke-linejoin="round"
+     stroke-width="0.5"
+     id="polyline61"
+     clip-path="url(#clipPath101)" />
+  <g
+     font-family="FreeSans"
+     font-size="9px"
+     font-style="normal"
+     font-weight="normal"
+     transform="translate(1033.03,177.86)"
+     xml:space="preserve"
+     id="g61">
+    <text
+   fill="#000000"
+   x="0 3 8 13"
+   y="0"
+   id="text61">-103</text>
+   </g>
+  <text
+     xml:space="preserve"
+     style="font-size:28px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:2;stroke-dasharray:none"
+     x="239.17587"
+     y="133.09789"
+     id="text116"><tspan
+       sodipodi:role="line"
+       id="tspan116"
+       style="stroke-width:2"
+       x="239.17587"
+       y="133.09789">synthesizer</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:28px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:2;stroke-dasharray:none"
+     x="233.17148"
+     y="102.07506"
+     id="text117"><tspan
+       sodipodi:role="line"
+       id="tspan117"
+       style="stroke-width:2"
+       x="233.17148"
+       y="102.07506">TTi TGR2053</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:28px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+     x="264.75"
+     y="201.812"
+     id="text118"><tspan
+       sodipodi:role="line"
+       id="tspan118"
+       style="stroke-width:2;fill:#000000;fill-opacity:1;stroke:none"
+       x="264.75"
+       y="201.812">-10 dB</tspan></text>
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+     d="m 305,135 v 42.00001"
+     id="path118" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+     d="m 304.99999,205 v 42.00001 l -15,8"
+     id="path118-5" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+     d="m 305,247.00001 15,8"
+     id="path119" />
+  <text
+     xml:space="preserve"
+     style="font-size:28px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+     x="325.125"
+     y="251.00002"
+     id="text119"><tspan
+       sodipodi:role="line"
+       id="tspan119"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2"
+       x="325.125"
+       y="251.00002">ZAPD-2-21</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:28px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+     x="222.96539"
+     y="284.25"
+     id="text120"><tspan
+       sodipodi:role="line"
+       id="tspan120"
+       style="stroke-width:2"
+       x="222.96539"
+       y="284.25">MAX2771 x2</tspan></text>
+</svg>
