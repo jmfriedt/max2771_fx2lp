@@ -4,7 +4,7 @@
 
 TX to RXref distance = 4840 m
 
-FSPL=20log10(490.10^6)+20log10(4840)-147.55=100 dB
+$FSPL=20log_{10}(490\cdot 10^6)+20log_{10}(4840)-147.55=100 dB$
 
 74-100=-26 dBm excluding Yagi-Uda receiving antenna gain
 
@@ -26,10 +26,8 @@ P1dB(MAX2771)=-85 dBm !
 ## Displying the bistatic range ellipse in QGis:
 
 <img src="2025-06-11-073154_2704x1050_scrot.png">
-wide.png
-zoom.png
-">
 
+```
 Layer -> Create Layer -> New Shapefile Layer (Geometry Type: Polygon)
 
 Pen Icon to Toggle Editing (also in the Layer Menu)
@@ -39,4 +37,8 @@ View -> Toolbars -> Advanced Digitizing Toolbar (enable)
 Add Polygon Feature
 
 Ellipse from Foci
+```
 
+<img src="wide.png">
+
+<img src="zoom.png">
