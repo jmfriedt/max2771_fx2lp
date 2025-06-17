@@ -20,7 +20,7 @@ values before jumping to a new random value after powering off and on:
 
 ## Programming the PLL between upper and lower L-band
 
-<img src="uplow.png">
+<img src="updown.png">
 
 ## Programming the PLL within the upper L-band
 
