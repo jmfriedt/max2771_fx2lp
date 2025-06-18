@@ -31,6 +31,4 @@ The measurements were repeated by reprogramming between two upper L-bands altern
 Same with timestamped X-axis and thermal camera pictures of the chip illustrating how it
 is warming up during phase drift:
 
-<img src="echauffement4.png">
-
-<img src="echauffement5.png">
+<img src="echauffement4.png"><img src="echauffement5.png">
