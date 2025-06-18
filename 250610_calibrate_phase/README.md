@@ -2,11 +2,11 @@
 
 * Phase coherence is lost if programming from upper to lower or lower to
 upper L-band.
-* Phase coherence is lost when starting from cold-starting (power up) a 
+* Phase coherence is lost when starting from cold-start (power up) a 
 new acquisition.
 * Phase seems to be kept when streaming continuously IQ (ZMQ Publish) and
 programming within the upper or lower L-band.
-* Phase acquisition is kept when retarting a new acquisition (``pocket_dump``)
+* Phase acquisition is kept when restarting a new acquisition (``pocket_dump``)
 without powering down the circuit.
 
 ## Powering on and off the circuit (on Raspberry Pi 4 to be able to control USB power)
