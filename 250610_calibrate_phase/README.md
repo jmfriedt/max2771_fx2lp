@@ -9,7 +9,7 @@ programming within the upper or lower L-band.
 * Phase acquisition is kept when retarting a new acquisition (``pocket_dump``)
 without powering down the circuit.
 
-## Powering on and off the circuit
+## Powering on and off the circuit (on Raspberry Pi 4 to be able to control USB power)
 
 In the following chart, 40 successive acquisitions were performed, each repeating
 three successive data collections (``pocket_dump``) before powering off and on the
@@ -27,3 +27,8 @@ values before jumping to a new random value after powering off and on:
 The measurements were repeated by reprogramming between two upper L-bands alternatively.
 
 <img src="upup.png">
+
+Same with timestamped X-axis and thermal camera pictures of the chip illustrating how it
+is warming up during phase drift:
+
+<img src="echauffement4.png">
