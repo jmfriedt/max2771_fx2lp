@@ -2,7 +2,7 @@
 
 * Phase coherence is lost if programming from upper to lower or lower to
 upper L-band.
-* Phase coherence is lost when starting from cold-start (power up) a 
+* Phase coherence is lost when starting from cold-starting (power up) a 
 new acquisition.
 * Phase seems to be kept when streaming continuously IQ (ZMQ Publish) and
 programming within the upper or lower L-band.
@@ -32,3 +32,12 @@ Same with timestamped X-axis and thermal camera pictures of the chip illustratin
 is warming up during phase drift:
 
 <img src="echauffement4.png"><img src="echauffement5.png">
+
+$2\pi$ is $1/1575.42$ microseconds or 0.635 ns so that 1 rad is 100 ps drift
+between the two oscillators.
+
+## No reprogramming, long term phase difference measurement
+
+<img src="zmq.png">
+
+
