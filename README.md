@@ -117,3 +117,14 @@ Linux buildroot 6.6.28-v8 #1 SMP PREEMPT Mon Feb  3 08:00:06 UTC 2025 aarch64 GN
 ```
 and the acqisition is validated on the host (the Raspberry Pi is lacking matplotlib and scipy)
 with ``python3 python/pocket_acq.py -f 4  -sig L1CA -prn 1-32 /tmp/2.bin``
+
+### Non-GNSS uses
+The L-band is used for many non-GNSS applications. The VCO of the upper-L band receiver was tested
+to lock up to 1638 MHz (RDIV=8, NDIV=546), well above Iridium (1616-1626.5 MHz), and down to 1458 MHz 
+(RDIV=400, NDIV=24300), unfortunately still too high for the neutral hydrogen line (1420.4 MHz or 
+38 MHz away, above the 22 MHz Nyquist frequency when sampling at 44 MS/s, the maximum rate allowed 
+by the MAX2771) but compatible with <a href="https://www.youtube.com/watch?v=0UFHMCiM-60">Inmarsat</a>
+(1525-1547 MHz).
+
+The MAX2771 is expected to be compatible with receiving NISAR bursts since the 1257.5+/-40 MHz lies 
+within the lower L-band VCO tuning range (1160-1290 MHz).
