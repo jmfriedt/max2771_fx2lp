@@ -1,5 +1,11 @@
 ## Bitbanged SPI triggered by USB Vendor Request transactions
 
+The initial investigation of Vendor Request implementation using Python used the firmware
+provided by Tomoji Takasu's PocketSDR to become familiar with the libusb control packets.
+This initial investigation is no longer needed and we advice proceeding with the ``vendor_cmd.c`` 
+simplified example compiled with ``sdcc`` rather than starting with the compiled hexadecimal file
+as described below for historical reasons.
+
 ### Using the binary PocketSDR firmware compiled with the proprietary Keil compiler
 
 Using a FX2LP started with the EEPROM firmware (closed jumper on EEPROM) and 
