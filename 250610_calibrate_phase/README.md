@@ -38,6 +38,7 @@ between the two oscillators.
 
 ## No reprogramming, long term phase difference measurement
 
-<img src="zmq.png">
-
-
+* Create the FIFO: ``mkfifo /tmp/ch12``
+* Collect data after initial configuration: ``pocket_conf pocket_L1L1_4MHz.conf && pocket_dump -r``
+* Stream data: ``zmq_out.py``
+* Recover data and analyzer: ``zmq_process_with_cal.py``
