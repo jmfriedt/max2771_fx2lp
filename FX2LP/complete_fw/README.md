@@ -12,7 +12,9 @@ see <a href="../bulk_read_example/">../bulk_read_example/</a>).
 
 Once the program is executing, ``lsusb`` must indicate
 ```
-Bus 001 Device 097: ID 04b4:1004 Cypress Semiconductor Corp. There
+$ sudo lsusb -d 04b4:1004 -v | head -16 | tail -2
+  iManufacturer           1 Master
+  iProduct                2 ELISE
 ```
 
 Warning: ``fx2lib`` provides a ``delay()`` function with an argument in ms, conflicting

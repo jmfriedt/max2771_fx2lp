@@ -1,27 +1,27 @@
-; Copyright (C) 2009 Ubixum, Inc. 
+; Copyright (C) 2009 Ubixum, Inc.
 ;
 ; This library is free software; you can redistribute it and/or
 ; modify it under the terms of the GNU Lesser General Public
 ; License as published by the Free Software Foundation; either
 ; version 2.1 of the License, or (at your option) any later version.
-; 
+;
 ; This library is distributed in the hope that it will be useful,
 ; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ; Lesser General Public License for more details.
-; 
+;
 ; You should have received a copy of the GNU Lesser General Public
 ; License along with this library; if not, write to the Free Software
 ; Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-; this is a the default 
-; full speed and high speed 
+; this is a the default
+; full speed and high speed
 ; descriptors found in the TRM
-; change however you want but leave 
+; change however you want but leave
 ; the descriptor pointers so the setupdat.c file works right
- 
 
-.module DEV_DSCR 
+
+.module DEV_DSCR
 
 ; descriptor types
 ; same as setupdat.h
@@ -55,14 +55,14 @@ _dev_dscr:
 	.db	0xff  					  ; class (vendor specific)
 	.db	0xff					  ; subclass (vendor specific)
 	.db	0xff					  ; protocol (vendor specific)
-	.db	64						  ; packet size (ep0)
-	.dw	0xB404					  ; vendor id 
+	.db	64					  ; packet size (ep0)
+	.dw	0xB404					  ; vendor id
 	.dw	0x0410					  ; product id
 	.dw	0x0100					  ; version id
-	.db	1		                  ; manufacturure str idx
-	.db	2				          ; product str idx	
-	.db	0				          ; serial str idx 
-	.db	1			              ; n configurations
+	.db	1		               		  ; manufacturer str idx
+	.db	2				          ; product str idx
+	.db	0				          ; serial str idx
+	.db	1			              	  ; n configurations
 dev_dscr_end:
 
 _dev_qual_dscr:
@@ -90,7 +90,7 @@ _highspd_dscr:
 	.db	0x32                             ; max power = 100ma
 highspd_dscr_end:
 
-; all the interfaces next 
+; all the interfaces next
 ; NOTE the default TRM actually has more alt interfaces
 ; but you can add them back in if you need them.
 ; here, we just use the default alt setting 1 from the trm
@@ -98,11 +98,11 @@ highspd_dscr_end:
 	.db	DSCR_INTERFACE_TYPE
 	.db	0				 ; index
 	.db	0				 ; alt setting idx
-	.db	2				 ; n endpoints	
+	.db	2				 ; n endpoints
 	.db	0xff			 ; class
 	.db	0xff
 	.db	0xff
-	.db	3	             ; string index	
+	.db	3	             ; string index
 
 ; endpoint 2 out
 	.db	DSCR_ENDPOINT_LEN
@@ -138,7 +138,7 @@ _fullspd_dscr:
 	.db	0x32                             ; max power = 100ma
 fullspd_dscr_end:
 
-; all the interfaces next 
+; all the interfaces next
 ; NOTE the default TRM actually has more alt interfaces
 ; but you can add them back in if you need them.
 ; here, we just use the default alt setting 1 from the trm
@@ -146,11 +146,11 @@ fullspd_dscr_end:
 	.db	DSCR_INTERFACE_TYPE
 	.db	0				 ; index
 	.db	0				 ; alt setting idx
-	.db	2				 ; n endpoints	
+	.db	2				 ; n endpoints
 	.db	0xff			 ; class
 	.db	0xff
 	.db	0xff
-	.db	3	             ; string index	
+	.db	3	             ; string index
 
 ; endpoint 2 out
 	.db	DSCR_ENDPOINT_LEN
@@ -185,24 +185,32 @@ string0end:
 _string1:
     .db string1end-_string1
     .db DSCR_STRING_TYPE
-    .ascii 'H'
+    .ascii 'M'
     .db 0
-    .ascii 'i'
+    .ascii 'a'
+    .db 0
+    .ascii 's'
+    .db 0
+    .ascii 't'
+    .db 0
+    .ascii 'e'
+    .db 0
+    .ascii 'r'
     .db 0
 string1end:
 
 _string2:
     .db string2end-_string2
     .db DSCR_STRING_TYPE
-    .ascii 'T'
+    .ascii 'E'
     .db 0
-    .ascii 'h'
+    .ascii 'L'
     .db 0
-    .ascii 'e'
+    .ascii 'I'
     .db 0
-    .ascii 'r'
+    .ascii 'S'
     .db 0
-    .ascii 'e'
+    .ascii 'E'
     .db 0
 string2end:
 
@@ -220,6 +228,6 @@ _string3:
     .ascii 'e'
     .db 0
 string3end:
-    
+
 _dev_strings_end:
     .dw 0x0000   ; just in case someone passes an index higher than the end to the firmware
