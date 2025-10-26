@@ -8,6 +8,7 @@
 #include <i2c.h>
 
 #define ENA_VR_EE // enable EEPROM read and write vendor requests
+#undef AD9851
 
 // type defintions -------------------------------------------------------------
 typedef unsigned char uint8_t;
@@ -20,7 +21,9 @@ typedef long int32_t;
 static void load_default(void);
 static void load_settings(void);
 static void save_settings(void);
+#ifdef AD9851
 static void write_AD9851(uint32_t, uint8_t);
+#endif
 
 #define SYNCDELAY SYNCDELAY4
 
@@ -39,7 +42,13 @@ void jmfdelay(int i)
 #define F_TCXO       24000      // TCXO frequency (kHz)
 #define CSN1         0          // EZ-USB FX2 PD0  -> MAX2771 CH1 CSN
 #define CSN2         1          // EZ-USB FX2 PD1  -> MAX2771 CH2 CSN
+#ifdef AD9851
 #define CSNAD9851    7          // EZ-USB FX2 PA7  -> AD9851 FQ_UD
+#endif
+// for phase calibration
+#define OSCENA       0          // EZ-USB FX2 PA0  -> Oscillator Enable
+#define SPDT         1          // EZ-USB FX2 PA1  -> SPDT
+// end phase calibration
 #define SCLK         2          // EZ-USB FX2 PD2  -> MAX2771 SCLK
 #define SDATA        3          // EZ-USB FX2 PD3 <-> MAX2771 SDATA
 #define STAT1        4          // EZ-USB FX2 PD4 <-  MAX2771 CH1 LD
@@ -57,7 +66,10 @@ void jmfdelay(int i)
 #define VR_SAVE      0x47       // USB vendor request: Save settings to EEPROM
 #define VR_EE_READ   0x48       // USB vendor request: Read EEPROM
 #define VR_EE_WRITE  0x49       // USB vendor request: Write EEPROM
+#ifdef AD9851
 #define VR_AD9851    0x50       // USB vendor request: Write AD9851
+#endif
+#define VR_GPIO      0x51       // USB vendor request: Set GPIO state
 
 #define MAX_CH       2          // number of MAX2771 channels
 #define MAX_ADDR     11         // number of MAX2771 registers
@@ -100,7 +112,9 @@ static void stop_bulk(void) {
 
 // SETUP routine ---------------------------------------------------------------
 void setup(void) {
+#ifdef AD9851
   uint32_t freq = 0x28F5C28F;      // AD9851 24 MHz frequency output
+#endif
   CPUCS         = 0x12; SYNCDELAY; // CPU: CLKSPD=48MHz, CLKOE=FLOAT
   EP2FIFOCFG    = 0x00; SYNCDELAY; // EPxFIFO: WORDWIDE=BYTE (PD enabled)
   EP4FIFOCFG    = 0x00; SYNCDELAY;
@@ -120,17 +134,23 @@ void setup(void) {
   
   digitalWriteD(CSN1, 1);
   digitalWriteD(CSN2, 1);
+#ifdef AD9851
   digitalWriteA(CSNAD9851, 0); // low rest state, rise to transfer
+#endif
   digitalWriteD(SCLK, 0);
 //  freq=bswap32(freq);
+#ifdef AD9851
   write_AD9851(freq, 0x01);
+#endif
 
 //  EZUSB_InitI2C();  // JMF
   load_default();
   load_settings();  // JMF
 
+#ifdef AD9851
   jmfdelay(255);
   write_AD9851(freq, 0x01);
+#endif
   start_bulk();
 }
 
@@ -214,6 +234,7 @@ static void write_head(uint16_t addr, uint8_t mode) {
   jmfdelay(SCLK_CYC);
 }
 
+#ifdef AD9851
 // AD9851 is rising edge, LSB first, 5 bytes with 4 byte frequency (LSB to MSB) and 1 byte
 // with {6xREFCLK=1, 0, 0, phase=00000}, ends with pulse on FQ_UD
 static void write_AD9851(uint32_t freq, uint8_t ctrl) {
@@ -232,6 +253,7 @@ static void write_AD9851(uint32_t freq, uint8_t ctrl) {
   jmfdelay(SCLK_CYC);
   digitalWriteA(CSNAD9851, 0);
 }
+#endif
 
 // write MAX2771 register ------------------------------------------------------
 static void write_reg(uint8_t cs, uint8_t addr, uint32_t val) {
@@ -266,7 +288,9 @@ BOOL handle_vendorcommand(BYTE cmd) {
  uint16_t len = WORD_(SETUPDAT + 6);
  uint16_t val = WORD_(SETUPDAT + 2);
  uint32_t val32;
+#ifdef AD9851
  uint8_t ctrl;
+#endif
  switch ( cmd ) {
   case VR_STAT:
   {
@@ -349,6 +373,7 @@ BOOL handle_vendorcommand(BYTE cmd) {
     break;
   }
 #endif
+#ifdef AD9851
   case VR_AD9851: 
   {
     if (len < 5) return TRUE;
@@ -358,6 +383,22 @@ BOOL handle_vendorcommand(BYTE cmd) {
     val32=bswap32(val32);
     ctrl=EP0BUF[4];
     write_AD9851(val32, ctrl);
+    return TRUE;
+    break;
+  }
+#endif
+  case VR_GPIO:
+  {
+    EP0BCH = EP0BCL = 0;
+    // while (EP0CS & bmEPBUSY) ;
+    if ((SETUPDAT[2]&1)==0)
+       digitalWriteA(OSCENA, 0);
+    else
+       digitalWriteA(OSCENA, 1);
+    if ((SETUPDAT[2]&2)==0)
+       digitalWriteA(SPDT, 0);
+    else
+       digitalWriteA(SPDT, 1);
     return TRUE;
     break;
   }

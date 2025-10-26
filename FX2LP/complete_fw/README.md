@@ -7,7 +7,8 @@ for executing from RAM, or
 ```
 sudo ../../fxload/src/fxload load_eeprom --device 04b4:8613 --ihex-path ./build/complete_fw.ihx -t FX2LP --control-byte 0xC2 -s ../bulk_read_example/Vend_Ax.hex
 ```
-for flashing to non-volatile memory.
+for flashing to non-volatile memory (remember to invalidate EEPROM if already written,
+see <a href="../bulk_read_example/">../bulk_read_example/</a>).
 
 Once the program is executing, ``lsusb`` must indicate
 ```
