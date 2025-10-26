@@ -26,7 +26,7 @@ sudo cycfx2prog prg:Vend_Ax.hex run
 to invalidate the EEPROM first bytes. Then switch off and back on, and
 ```
 make
-sudo ./src/fxload load_eeprom --device 04b4:8613 --ihex-path ../max2771_fx2lp/FX2LP/bulk_read_example/build/fifo_ep6.ihx -t FX2LP --control-byte 0xC2 -s ./resources/Vend_Ax.hex
+sudo ../../fxload/src/fxload load_eeprom --device 04b4:8613 --ihex-path build/fifo_ep6.ihx -t FX2LP --control-byte 0xC2 -s ./Vend_Ax.hex
 ```
 and switch off and back on for executing the program.
  
@@ -51,4 +51,3 @@ sudo python3 ./bulk_read.py
 For this example to operate correctly, the following hardware settings are needed:
 
 <img src="pinout.png">
-

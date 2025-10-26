@@ -18,6 +18,7 @@ if _platform == "linux" or _platform == "linux2":
     dev.detach_kernel_driver(0)
 
 dev.set_configuration()
+dev.reset()                       ## needed for running multiple times bulkloop read/write 
 usb.util.claim_interface(dev,0)
 cfg = dev.get_active_configuration()
 interface_number = cfg[(0, 0)].bInterfaceNumber
