@@ -7,12 +7,20 @@ Schematic:
 
 <img src="max2771_fx2lp.svg">
 
-Board layers:
+Notice that the low-pass matching filters L1/C2 and L3/C4 are fitted with 5.6 nH/1.7 pF and
+8.4 nH/1.1 pF according to the typical application circuit found on page 49 of the datasheet.
+The values are selected for the upper and lower L-band respectively. If both MAX2771 are to be
+used in the same band, e.g. for CRPA, then replace the L/C values with the values best suited
+for the targeted band.
+
+Board layers (4-layer circuit to match the 50-ohm transmission lines in the L-band):
 
 <img src="max2771_fx2lp_gerber/max2771_fx2lp-B_Cu.svg">
 <img src="max2771_fx2lp_gerber/max2771_fx2lp-F_Cu.svg">
 <img src="max2771_fx2lp_gerber/max2771_fx2lp-In1_Cu.svg">
 <img src="max2771_fx2lp_gerber/max2771_fx2lp-In2_Cu.svg">
+
+Use the interactive BOM (in the <a href="bom/">bom/</a> subdirectory) when assembling the board.
 
 Result of the assembled board: configuring both MAX2771 to collect the 
 upper (L1) band with 8 MHz sampling rate and 2 MHz IF bandwith
