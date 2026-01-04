@@ -76,3 +76,5 @@ Velocity: East: 1098.92 [m/s], North: -692.35 [m/s], Up = 2221.27 [m/s]
 Current receiver time: 49 s
 Loss of lock in channel 5!
 ```
+
+<img src="IMG_20251222_160551_145small.jpg">
