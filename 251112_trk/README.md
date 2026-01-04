@@ -1,4 +1,4 @@
-<img src="IMG_20251012_135222_749.jpg">
+<img src="IMG_20251012_154059_046.jpg">
 
 ```
 PocketSDR/app/pocket_dump$ sudo ../pocket_conf/pocket_conf ../../conf/pocket_L1L1_4MHz.conf 
