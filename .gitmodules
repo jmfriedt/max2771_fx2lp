@@ -7,3 +7,6 @@
 [submodule "250304_L1L5_32MHz/GNSS-matlab"]
 	path = 250304_L1L5_32MHz/GNSS-matlab
 	url = https://github.com/danipascual/GNSS-matlab
+[submodule "2601_SNR_demonstration/GNSS-matlab"]
+	path = 2601_SNR_demonstration/GNSS-matlab
+	url = https://github.com/danipascual/GNSS-matlab
