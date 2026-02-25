@@ -20,5 +20,3 @@ from the MAX2771 to the FX2LP probably radiate too much RF power at the 4 to
 24 MHz datarate and 0-IF measuremements are extremely noisy when streaming the 
 IQ complex data. All useful measurements are performed with an IF, streaming 
 only I componenents, and offsetting the IF during software processing.
-
-TODO: check the assembled boards work at 0-IF
